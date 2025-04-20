@@ -8,13 +8,13 @@ body{
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  /*sfondo della barra di navigazioine*/
+  /*sfondo della barra di navigazioine
   .barra_di_navigazione {
     overflow: hidden;
     background-color: #333;
   }
   
-  /* Stili all'interno della barra di navigazione */
+  /* Stili all'interno della barra di navigazione 
   .barra_di_navigazione a {
     float: left;
     display: block;
@@ -25,19 +25,19 @@ body{
     font-size: 17px;
   }
   
-  /* Campio colore al passaggio del mause */
+  /* Campio colore al passaggio del mause 
   .barra_di_navigazione a:hover {
     background-color: #ddd;
     color: black;
   }
  
-  /* Cambia colore alla pagina del menù in cui sei dentro */
+  /* Cambia colore alla pagina del menù in cui sei dentro 
   .barra_di_navigazione a.active {
     background-color: #04AA6D;
     color: white;
   }
   
-  /*Nascondi i link delle pagine collegate al menù*/
+  /*Nascondi i link delle pagine collegate al menù
   .barra_di_navigazione .icon {
     display: none;
   }
@@ -90,50 +90,53 @@ body{
     border-radius: 5px;
 
   }
+      */
 
-
-/*
-nav ul {
-    list-style: none;
-    padding:0;
-    margin:0;
-    background-color:#f2f2f2;
-}
-
-nav ul li {
-    display:inline-block;
-}
-
-nav ul li a {
-    display: block;
-    padding:10px20px;
-    color:#333;
-    text-decoration: none;
-}
-
-nav ul li:hover {
-    background-color:#ddd;
-}
-
-nav ul li:hover > ul {
-    display: block;
-}
-
-nav ul ul {
-    display: none;
+/* Bottone Home */
+.btn-home {
     position: absolute;
-    background-color:#f2f2f2;
-}
-
-nav ul ul li {
-    display: block;
-}
-
-nav ul ul li a {
-    padding:10px30px;
-    color:#333;
-}
-
-nav ul ul li a:hover {
-    background-color:#ddd;
-} */
+    top: 20px;
+    left: 20px;
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  /* Barra centrale */
+  .barra_di_navigazione {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto 0; /* margine dall'alto per lasciare spazio al bottone Home */
+    width: 80%;
+    background-color: #2c2c2c;
+    height: 60px;
+    box-sizing: border-box;
+  }
+  
+  /* Pulsanti della barra */
+  .barra_di_navigazione a {
+    flex: 1; /* ogni pulsante occupa lo stesso spazio */
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .barra_di_navigazione a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .barra_di_navigazione a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
