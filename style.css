@@ -1,142 +1,54 @@
-body{
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 20px;
-   
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    background-color: #1e1e2f;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
   }
   
-  /*sfondo della barra di navigazioine
-  .barra_di_navigazione {
-    overflow: hidden;
-    background-color: #333;
+  .topbar {
+    background-color: #2b2b3d;
+    color: white;
   }
   
-  /* Stili all'interno della barra di navigazione 
-  .barra_di_navigazione a {
-    float: left;
+  .sidebar-sinistra {
+    background-color: #2b2b3d;
+    color: white;
+  }
+  
+  .testo-principale {
+    background-color: #323248;
+  }
+  
+  .menu-link a,
+  .sidebar-sinistra  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
     display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Campio colore al passaggio del mause 
-  .barra_di_navigazione a:hover {
-    background-color: #ddd;
-    color: black;
-  }
- 
-  /* Cambia colore alla pagina del menù in cui sei dentro 
-  .barra_di_navigazione a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  /*Nascondi i link delle pagine collegate al menù
-  .barra_di_navigazione .icon {
-    display: none;
-  }
-  
-
-  @media screen and (max-width: 600px) {
-    .barra_di_navigazione a:not(:first-child) {display: none;}
-    .barra_di_navigazione a.icon {
-      float: right;
-      display: block;   
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .barra_di_navigazione.responsive {position: relative;}
-    .barra_di_navigazione.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .barra_di_navigazione.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  }
-
-  .barra_di_navigazione {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    overflow: hidden;
-  }
-  
-  .barra_di_navigazione a {
-    font-size: 20px;
-    padding: 18px  80px;
-    text-decoration: none;
-    color: #f2f2f2;
-    text-align: center;
-  }
-
-  .pulsante-sinistra {
-    background-color: #04AA6D;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
     border-radius: 5px;
-
-  }
-      */
-
-/* Bottone Home */
-.btn-home {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #04AA6D;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10;
   }
   
-  /* Barra centrale */
-  .barra_di_navigazione {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px auto 0; /* margine dall'alto per lasciare spazio al bottone Home */
-    width: 80%;
-    background-color: #2c2c2c;
-    height: 60px;
-    box-sizing: border-box;
+  .menu-link a:hover,
+  .sidebar-sinistra a:hover {
+    background-color: #4e4e6e;
+    color: #ffffff;
+    transform: scale(1.05);
   }
   
-  /* Pulsanti della barra */
-  .barra_di_navigazione a {
-    flex: 1; /* ogni pulsante occupa lo stesso spazio */
+  .footer {
+    background-color: #2b2b3d;
+    color: #ccc;
     text-align: center;
-    line-height: 60px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
+    padding: 10px;
+    border-top: none;
   }
   
-  .barra_di_navigazione a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .barra_di_navigazione a.active {
-    background-color: #04AA6D;
-    color: white;
+  .footer span:hover {
+    color: #ffffff;
+    transition: color 0.3s ease;
   }
   
