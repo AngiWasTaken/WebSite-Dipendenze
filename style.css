@@ -4,11 +4,11 @@ body, html {
     padding: 0;
     background-color: #1e1e2f;
     color: white;
-    font-family: cursive
+    font-family: 'Times New Roman', Times, serif
   }
   
   .topbar {
-    background-color: #2b2b3d;
+    background-color: #474769;
     color: white;
   }
   
@@ -21,10 +21,40 @@ body, html {
     background-color: #323248;
   }
 
+  .titolo1 {
+    font-size: 2em;
+    color: #e09523;
+    text-align: center;
+    padding: 20px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .sottotitolo{
+    font-size: 1.5em;
+    color: #cac8c8;
+    text-align: left;
+    padding: 10px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+
   .kanit-regular {
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-style: normal;
+  }
+
+  .ibm-plex-sans {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
   }
   
   .menu-link a,
