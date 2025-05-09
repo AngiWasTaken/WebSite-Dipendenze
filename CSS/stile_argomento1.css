@@ -171,3 +171,14 @@ h3 {
   direction: ltr;
 
 }
+
+   .card-custom {
+      border: 2px solid #0dcaf0;
+      transition: box-shadow 0.3s, background-color 0.3s;
+    }
+
+    /* Quando il contenuto è visibile (collapse aperto), illumina */
+    .collapse.show ~ .card-body {
+      box-shadow: 0 0 15px rgba(13, 202, 240, 0.6);
+      background-color: #212529;
+    }
