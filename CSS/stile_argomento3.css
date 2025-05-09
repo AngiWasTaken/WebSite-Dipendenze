@@ -114,7 +114,7 @@ ul{
   color: white;
 
   /* Dimensione del Testo */
-  font-size: 16px;
+  font-size: 20px;
 
   /* Famiglia del Carattere */
   font-family: 'Times New Roman', Times, serif;
@@ -153,6 +153,8 @@ h1 {
   /* Trasformazione del Testo */
   text-transform: uppercase;
 
+  margin-top: 50px;
+  margin-bottom: 35px;
   
 }
 
@@ -162,7 +164,7 @@ h3 {
   color: rgba(119, 198, 252, 0.904);
 
   /* Dimensione del Testo */
-  font-size: 22px;
+  font-size: 28px;
 
   /* Famiglia del Carattere */
   font-family: 'Times New Roman', Times, serif;
