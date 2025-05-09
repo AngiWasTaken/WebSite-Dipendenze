@@ -8,6 +8,7 @@
 </head>
 <body class="d-flex flex-column h-100">
   <div class="container-fluid flex-grow-1 d-flex flex-column">
+
     <!-- Topbar Menu -->
     <div class="row topbar text-center">
       <div class="col py-2 link-menu"><a href="../HTML/index.html">HomePage</a></div>
@@ -31,10 +32,9 @@
         <!-- Sezioni con collapse -->
         <div class="container">
 
-          <!-- Sezione 1 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#datiEpidemiologici">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#datiEpidemiologici">
                 <span class="icon">▶️</span> Dati Epidemiologici
               </a>
             </div>
@@ -50,10 +50,9 @@
             </div>
           </div>
 
-          <!-- Sezione 2 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#fattoriRischio">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#fattoriRischio">
                 <span class="icon">▶️</span> Fattori di Rischio
               </a>
             </div>
@@ -68,10 +67,9 @@
             </div>
           </div>
 
-          <!-- Sezione 3 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#infoRilevanti">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#infoRilevanti">
                 <span class="icon">▶️</span> Informazioni Rilevanti
               </a>
             </div>
@@ -88,10 +86,9 @@
             </div>
           </div>
 
-          <!-- Sezione 4 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#comorbidita">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#comorbidita">
                 <span class="icon">▶️</span> Conpresenza di Patologie
               </a>
             </div>
@@ -109,10 +106,9 @@
             </div>
           </div>
 
-          <!-- Sezione 5 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#altre">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#altre">
                 <span class="icon">▶️</span> Altre Considerazioni
               </a>
             </div>
@@ -152,8 +148,10 @@
     <p>Testo footer.</p>
   </footer>
 
-  <!-- Script -->
+  <!-- Script Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script gestione icone collapse -->
   <script>
     document.querySelectorAll('.collapse').forEach(collapse => {
       const toggle = collapse.previousElementSibling.querySelector('.collapse-toggle');
@@ -172,6 +170,7 @@
   </script>
 </body>
 </html>
+
 
 
 <!-- <!DOCTYPE html>
