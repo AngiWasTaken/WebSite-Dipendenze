@@ -153,6 +153,19 @@ h1 {
   
 }
 
+/* Rimuovi effetti luminosi dai link nei collapse */
+.card-header a {
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* Rimuove effetti glow in caso di hover/focus */
+.card-header a:hover,
+.card-header a:focus {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
 
 h3 {
   /* Colore del Testo */
