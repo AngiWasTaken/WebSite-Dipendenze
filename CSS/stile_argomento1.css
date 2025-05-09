@@ -1,3 +1,4 @@
+/* Rimozione margini e padding di base */
 body, html {
   height: 100%;
   margin: 0;
@@ -7,66 +8,39 @@ body, html {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.primario {
-  background-color: #4e4e6e;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.animazion1:hover {
-  background-color: #6c6ca8;
-  transform: scale(1.05);
-}
-
+/* Colori e stili per la barra superiore */
 .topbar {
   background-color: #2b2b3d;
   color: white;
 }
 
-.sidebar-sinistra {
-  background-color: #2b2b3d;
-  color: white;
+/* Personalizzazione delle cards */
+.card-custom {
+  border: 2px solid #c542f5;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  background-color: #121212;
 }
 
-.contenuto-principale {
-  background-color: #323248;
-}
-
-.link-menu a,
-.sidebar-sinistra a {
-  text-decoration: none;
-  color: white;
+.card-header a.collapse-toggle {
+  color: #c542f5 !important;
   font-weight: bold;
-  display: block;
-  padding: 8px;
+  text-align: right;
+  text-shadow: 0 0 10px #c542f5;
   transition: all 0.3s ease;
-  border-radius: 5px;
 }
 
-.link-menu a:hover,
-.sidebar-sinistra a:hover {
-  background-color: #4e4e6e;
-  color: #ffffff;
-  transform: scale(1.05);
+.card-header a.collapse-toggle:hover {
+  text-shadow: 0 0 14px #c542f5, 0 0 20px #c542f5;
+  color: #e273ff !important;
 }
 
-.footer {
-  background-color: #2b2b3d;
-  color: #ccc;
-  text-align: center;
-  padding: 10px;
-  border-top: none;
+.collapse.show ~ .card-body,
+.card-custom.active {
+  box-shadow: 0 0 15px rgba(197, 66, 245, 0.6);
+  background-color: #212529;
 }
 
-.footer span:hover {
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.impaginazione {
-  margin-top: 20px;
-}
-
+/* Impaginazione */
 .pagination .page-item .page-link {
   background-color: #2b2b3d;
   color: #fff;
@@ -87,59 +61,51 @@ body, html {
   color: #ffffff;
 }
 
+.footer {
+  background-color: #2b2b3d;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  border-top: none;
+}
+
+/* Titoli e paragrafi */
+h1 {
+  color: #c542f5;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+}
+
 p, ul {
   color: white;
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
   text-align: left;
-  direction: ltr;
 }
 
 ul {
   font-size: 16px;
 }
 
-h1 {
-  color: #c542f5;
-  font-size: 50px;
-  font-family: 'Times New Roman', Times, serif;
+.link-menu a {
+  text-decoration: none;
+  color: white;
   font-weight: bold;
-  text-align: left; /* Allineato a sinistra */
-  text-transform: uppercase;
-  direction: ltr;
-}
-
-h3 {
-  color: #ad6ff5;
-  font-size: 22px;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: left;
-  direction: ltr;
-}
-
-/* Riquadro personalizzato con bordo viola */
-.card-custom {
-  border: 2px solid #c542f5;
-  transition: box-shadow 0.3s, background-color 0.3s;
-  background-color: #121212;
-}
-
-.collapse.show ~ .card-body,
-.card-custom.active {
-  box-shadow: 0 0 15px rgba(197, 66, 245, 0.6);
-  background-color: #212529;
-}
-
-/* Glow viola per menu a tendina */
-.card-header a.collapse-toggle {
-  color: #c542f5 !important;
-  font-weight: bold;
-  text-align: right;
-  text-shadow: 0 0 10px #c542f5;
+  display: block;
+  padding: 8px;
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
-.card-header a.collapse-toggle:hover {
-  text-shadow: 0 0 14px #c542f5, 0 0 20px #c542f5;
-  color: #e273ff !important;
+.link-menu a:hover {
+  background-color: #4e4e6e;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.footer span:hover {
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
