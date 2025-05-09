@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="../CSS/stile_argomento1.css">
 </head>
 <body class="d-flex flex-column h-100">
-
   <div class="container-fluid flex-grow-1 d-flex flex-column">
-
     <!-- Topbar Menu -->
     <div class="row topbar text-center">
       <div class="col py-2 link-menu"><a href="../HTML/index.html">HomePage</a></div>
@@ -23,10 +21,10 @@
 
     <!-- Contenuto Principale -->
     <div class="row flex-grow-1">
-      <div class="col contenuto-principale d-flex flex-column justify-content-center align-items-start text-start p-4">
+      <div class="col contenuto-principale d-flex flex-column justify-content-center align-items-center text-center p-4">
 
-        <h1 class="text-center "><strong>Disturbo da Uso di Alcol</strong></h1>
-        <p>
+        <h1><strong>Disturbo da Uso di Alcol</strong></h1>
+        <p class="w-75 text-center">
           Il disturbo da uso di alcol è una condizione diffusa che coinvolge una significativa parte della popolazione adulta e rappresenta un importante problema di salute pubblica. Di seguito sono riportati i principali dati epidemiologici, i fattori di rischio, le informazioni rilevanti e le comorbidità associate.
         </p>
 
@@ -36,7 +34,9 @@
           <!-- Sezione 1 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#datiEpidemiologici">▶️ Dati Epidemiologici</a>
+              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#datiEpidemiologici">
+                <span class="icon">▶️</span> Dati Epidemiologici
+              </a>
             </div>
             <div class="collapse" id="datiEpidemiologici">
               <div class="card-body">
@@ -53,7 +53,9 @@
           <!-- Sezione 2 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#fattoriRischio">▶️ Fattori di Rischio</a>
+              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#fattoriRischio">
+                <span class="icon">▶️</span> Fattori di Rischio
+              </a>
             </div>
             <div class="collapse" id="fattoriRischio">
               <div class="card-body">
@@ -69,7 +71,9 @@
           <!-- Sezione 3 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#infoRilevanti">▶️ Informazioni Rilevanti</a>
+              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#infoRilevanti">
+                <span class="icon">▶️</span> Informazioni Rilevanti
+              </a>
             </div>
             <div class="collapse" id="infoRilevanti">
               <div class="card-body">
@@ -87,7 +91,9 @@
           <!-- Sezione 4 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#comorbidita">▶️ Conpresenza di Patologie</a>
+              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#comorbidita">
+                <span class="icon">▶️</span> Conpresenza di Patologie
+              </a>
             </div>
             <div class="collapse" id="comorbidita">
               <div class="card-body">
@@ -106,7 +112,9 @@
           <!-- Sezione 5 -->
           <div class="card card-custom mb-3">
             <div class="card-header bg-dark">
-              <a class="text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#altre">▶️ Altre Considerazioni</a>
+              <a class="collapse-toggle text-decoration-none text-info d-block" data-bs-toggle="collapse" href="#altre">
+                <span class="icon">▶️</span> Altre Considerazioni
+              </a>
             </div>
             <div class="collapse" id="altre">
               <div class="card-body">
@@ -148,16 +156,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.querySelectorAll('.collapse').forEach(collapse => {
+      const toggle = collapse.previousElementSibling.querySelector('.collapse-toggle');
+      const icon = toggle.querySelector('.icon');
+
       collapse.addEventListener('show.bs.collapse', () => {
         collapse.closest('.card-custom').classList.add('active');
+        icon.textContent = '▼';
       });
+
       collapse.addEventListener('hide.bs.collapse', () => {
         collapse.closest('.card-custom').classList.remove('active');
+        icon.textContent = '▶️';
       });
     });
   </script>
 </body>
 </html>
+
 
 <!-- <!DOCTYPE html>
 <head>
