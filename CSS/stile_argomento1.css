@@ -24,7 +24,7 @@ body, html {
 .card-header a.collapse-toggle {
   color: #c542f5 !important;
   font-weight: bold;
-  text-align: right;
+   text-align: left;
   text-shadow: 0 0 10px #c542f5;
   transition: all 0.3s ease;
 }
@@ -108,7 +108,4 @@ ul {
 .footer span:hover {
   color: #ffffff;
   transition: color 0.3s ease;
-}
-h1, h3, p, ul {
-  text-align: left; /* Allinea tutto a sinistra */
 }
