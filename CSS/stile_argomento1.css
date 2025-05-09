@@ -1,0 +1,173 @@
+ 
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e2f;  
+  color: white;  
+  font-family: 'Times New Roman', Times, serif; 
+}
+ 
+.primario {
+  background-color: #4e4e6e;
+  border: none;
+  transition: all 0.3s ease;  
+}
+ 
+.animazion1:hover {
+  background-color: #6c6ca8;
+  transform: scale(1.05); 
+} 
+
+.topbar {
+  background-color: #2b2b3d;
+  color: white;
+}
+ 
+.sidebar-sinistra {
+  background-color: #2b2b3d;
+  color: white;
+}
+ 
+.contenuto-principale {
+  background-color: #323248;
+} 
+
+.link-menu a,
+.sidebar-sinistra a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: block;
+  padding: 8px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+ 
+.link-menu a:hover,
+.sidebar-sinistra a:hover {
+  background-color: #4e4e6e;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+ 
+.footer {
+  background-color: #2b2b3d;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  border-top: none;
+}
+ 
+.footer span:hover {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+ 
+.impaginazione {
+  margin-top: 20px;
+} 
+
+.pagination .page-item .page-link {
+  background-color: #2b2b3d;
+  color: #fff;
+  border: none;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+ 
+.pagination .page-item .page-link:hover {
+  background-color: #4e4e6e;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+ 
+.pagination .page-item.active .page-link {
+  background-color: #4e4e6e;
+  color: #ffffff;
+}
+
+p{
+  /* Colore del Testo */
+  color: white;
+
+  /* Dimensione del Testo */
+  font-size: 20px;
+
+  /* Famiglia del Carattere */
+  font-family: 'Times New Roman', Times, serif;
+
+  /* Allineamento del Testo */
+  text-align: left;
+
+  /* Direzione del Testo */
+  direction: ltr;
+
+}
+
+ul{
+  /* Colore del Testo */
+  color: white;
+
+  /* Dimensione del Testo */
+  font-size: 16px;
+
+  /* Famiglia del Carattere */
+  font-family: 'Times New Roman', Times, serif;
+
+  /* Allineamento del Testo */
+  text-align: left;
+
+  /* Direzione del Testo */
+  direction: ltr;
+
+  text-align: left;
+
+}
+
+
+
+h1 {
+  /* Colore del Testo */
+  color: rgb(77, 190, 255);
+
+  /* Dimensione del Testo */
+  font-size: 50px;
+
+  /* Famiglia del Carattere */
+  font-family: 'Times New Roman', Times, serif;
+
+  /* Spessore del Carattere */
+  font-weight: bold;
+
+  /* Allineamento del Testo */
+  text-align: center;
+
+  /* Direzione del Testo */
+  direction: ltr;
+
+  /* Trasformazione del Testo */
+  text-transform: uppercase;
+
+  
+}
+
+
+h3 {
+  /* Colore del Testo */
+  color: rgba(119, 198, 252, 0.904);
+
+  /* Dimensione del Testo */
+  font-size: 22px;
+
+  /* Famiglia del Carattere */
+  font-family: 'Times New Roman', Times, serif;
+
+  /* Allineamento del Testo */
+  text-align: left;
+
+  /* Direzione del Testo */
+  direction: ltr;
+
+}
