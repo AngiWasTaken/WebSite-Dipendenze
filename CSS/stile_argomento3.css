@@ -93,6 +93,7 @@ body, html {
   text-align: center;
   color: chocolate;
 }
+
 p{
   /* Colore del Testo */
   color: white;
@@ -105,10 +106,7 @@ p{
 
   /* Allineamento del Testo */
   text-align: left;
-
-  /* Direzione del Testo */
-  direction: ltr;
-
+ 
 }
 
 ul{
