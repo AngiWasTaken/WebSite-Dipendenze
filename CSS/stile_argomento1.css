@@ -201,3 +201,22 @@ h3 {
   box-shadow: 0 0 15px rgba(13, 202, 240, 0.6);
   background-color: #212529;
 }
+
+  .topbar {
+    background-color: #343a40; /* o lo stesso colore dell'h1 se definito, esempio: #212529 */
+    color: white;
+  }
+
+  .link-menu a {
+    color: white;
+    text-align: right;
+    display: block;
+  }
+
+  .link-menu a:hover {
+    color: #ffc107; /* colore evidenziazione su hover, facoltativo */
+  }
+
+  h1 {
+    color: #343a40; /* deve corrispondere al colore della topbar */
+  }
