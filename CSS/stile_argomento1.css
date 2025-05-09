@@ -202,3 +202,22 @@ h3 {
   background-color: #212529;
 }
 
+/* Colore del titolo principale */
+h1 {
+  color: #343a40;
+}
+
+/* Glow sui menu a tendina (collapse headers) */
+.card-header a.collapse-toggle {
+  color: #343a40 !important;
+  text-align: right;
+  font-weight: bold;
+  text-shadow: 0 0 8px #343a40; /* glow */
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Glow più intenso al passaggio del mouse */
+.card-header a.collapse-toggle:hover {
+  text-shadow: 0 0 12px #343a40, 0 0 16px #343a40;
+  color: #343a40;
+}
