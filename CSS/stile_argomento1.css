@@ -291,3 +291,11 @@ h3 {
   text-shadow: 0 0 14px #c542f5, 0 0 20px #c542f5;
   color: #e273ff !important;
 }
+.a{
+  color: #ad6ff5;
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+  direction: ltr;
+
+}
