@@ -173,8 +173,9 @@ h3 {
 }
 
    .card-custom {
-      border: 2px solid #0dcaf0;
-      transition: box-shadow 0.3s, background-color 0.3s;
+  border: 2px solid #0dcaf0;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  background-color: #121212;
     }
 
     /* Quando il contenuto è visibile (collapse aperto), illumina */
@@ -182,3 +183,8 @@ h3 {
       box-shadow: 0 0 15px rgba(13, 202, 240, 0.6);
       background-color: #212529;
     }
+
+.card-custom.active {
+  box-shadow: 0 0 15px rgba(13, 202, 240, 0.6);
+  background-color: #212529;
+}
