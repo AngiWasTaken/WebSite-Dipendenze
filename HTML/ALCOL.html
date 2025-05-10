@@ -154,9 +154,10 @@
                   <li>Trattamento: farmaci, psicoterapia, riabilitazione.</li>
                   <li>Lo stigma può ostacolare la cura.</li>
                 </ul>
-              </div>
+               </div>
             </div>
           </div>
+          <img src="https://images2.corriereobjects.it/methode_image/socialshare/2020/06/01/7bcecdb0-a415-11ea-b19d-c124828d4b5b.jpg" alt="Immagine esempio dal Corriere" width="600" />
         </div>
 
         <!-- Navigazione Pagine -->
@@ -194,7 +195,7 @@
       </div>
     </div>
   </div>
-
+  
   <!-- Footer -->
   <footer class="footer mt-auto">
     <p>Testo footer.</p>
@@ -203,6 +204,7 @@
   <!-- Bootstrap + Collapse Icons -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+  document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.collapse').forEach(collapse => {
       const toggle = collapse.previousElementSibling.querySelector('.collapse-toggle');
       const icon = toggle.querySelector('.icon');
@@ -217,9 +219,8 @@
         icon.textContent = '➤';
       });
     });
-    
-  </script>
-  <script src="../JS/pagina1.js"></script>
+  });
+</script>
 </body>
 </html>
 
