@@ -3,9 +3,9 @@ body, html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #1e1e2f;
+  background-color: #1e1e2f; /* Viola scuro */
   color: white;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Colori e stili per la barra superiore */
@@ -110,14 +110,7 @@ ul {
   transition: color 0.3s ease;
 }
 
-/* Dashboard */
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f9fc;
-  margin: 0;
-  padding: 2rem;
-}
-
+/* Dashboard layout */
 .dashboard {
   display: flex;
   gap: 2rem;
@@ -125,32 +118,16 @@ body {
 }
 
 .card {
-  background-color: white;
+  background-color: #121212;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   padding: 1rem 2rem;
   flex: 1;
   min-width: 300px;
+  color: white;
 }
 
 .chart-title {
-  color: #4e73df;
+  color: #c542f5;
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-canvas {
-  max-width: 100%;
-  height: 260px !important;
-}
-
-.note {
-  margin-top: 1rem;
-  font-size: 14px;
-  color: #5a5c69;
-}
-
-.note code {
-  color: #e83e8c;
-}
+  font-size: 1
