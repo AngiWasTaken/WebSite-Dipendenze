@@ -3,9 +3,9 @@ body, html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #1e1e2f; /* Viola scuro */
+  background-color: #1e1e2f;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Colori e stili per la barra superiore */
@@ -24,7 +24,7 @@ body, html {
 .card-header a.collapse-toggle {
   color: #c542f5 !important;
   font-weight: bold;
-  text-align: left;
+   text-align: left;
   text-shadow: 0 0 10px #c542f5;
   transition: all 0.3s ease;
 }
@@ -80,13 +80,13 @@ h1 {
 
 p, ul {
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
   text-align: left;
 }
 
 ul {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .link-menu a {
@@ -109,25 +109,3 @@ ul {
   color: #ffffff;
   transition: color 0.3s ease;
 }
-
-/* Dashboard layout */
-.dashboard {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.card {
-  background-color: #121212;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  padding: 1rem 2rem;
-  flex: 1;
-  min-width: 300px;
-  color: white;
-}
-
-.chart-title {
-  color: #c542f5;
-  font-weight: 600;
-  font-size: 1
