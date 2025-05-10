@@ -24,7 +24,7 @@ body, html {
 .card-header a.collapse-toggle {
   color: #c542f5 !important;
   font-weight: bold;
-   text-align: left;
+  text-align: left;
   text-shadow: 0 0 10px #c542f5;
   transition: all 0.3s ease;
 }
@@ -110,9 +110,7 @@ ul {
   transition: color 0.3s ease;
 }
 
-
-/*Prova della prova più prova che ci sia*/
-
+/* Dashboard */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f8f9fc;
