@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <title>Homepage</title>
@@ -10,7 +11,8 @@
   <div class="container-fluid flex-grow-1 d-flex flex-column">
  
     <div class="row topbar text-center">
-	<div class="col py-2 link-menu"><a href="../HTML/index.html">HomePage</a></div>
+	<div class="row topbar text-center">
+      <div class="col py-2 link-menu"><a href="../HTML/index.html">HomePage</a></div>
       <div class="col py-2 link-menu"><a href="../Descrizione DSM-5 e Tipologie Dipendenze/HTML/index.html">Descrizione DSM-5<br>Tipologie Dipendenze</a></div>
       <div class="col py-2 link-menu"><a href="../Alcol,Caffeina e Cannabis/HTML/index.html">Alcol Caffeina <br> Cannabis</a></div>
       <div class="col py-2 link-menu"><a href="../Allucinogeni,Inalanti e Oppiacei/HTML/index.html">Allucinogeni Inalanti e<br> Oppiacei</a></div>
@@ -20,93 +22,144 @@
     </div>
  
     <div class="row flex-grow-1">
-      <div class="col contenuto-principale d-flex flex-column justify-content-center align-items-left text-center">
+      <div class="col contenuto-principale d-flex flex-column justify-content-center align-items-center text-center p-4">
         <h1><strong>DISTURBO DA CANNABIS</strong></h1>
-        <p>
+        <p class="w-75 text-center">
           La cannabis è una sostanza che deriva dalla pianta omonima e da composti sintetici chimicamente simili, come l’hashish. È una delle sostanze illegali più diffuse al mondo e viene utilizzata sia in forma naturale che attraverso preparazioni sintetiche, alcune delle quali possono essere prescritte dal medico per specifiche condizioni.
         </p>
         
-        <details>
-          <summary><h3>Modalità d’uso</h3></summary>
-          <p>
-            La cannabis viene principalmente assunta tramite fumo, ma esistono anche formulazioni orali sintetiche utilizzate a scopo terapeutico su prescrizione medica.
-          </p>
-        </details>
+        <!-- Sezioni con collapse -->
+        <div class="container">
+      
+          <div class="card card-custom mb-3">
+            <div class="card-header bg-dark">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#uso">
+                <span class="icon">▶️</span> Modalità d’uso
+              </a>
+            </div>
+            <div class="collapse" id="uso">
+              <div class="card-body">
+                <p>
+                  La cannabis viene principalmente assunta tramite fumo, ma esistono anche formulazioni orali sintetiche utilizzate a scopo terapeutico su prescrizione medica.
+                </p>
+              </div>
+            </div>
+          </div>
         
-        <details>
-          <summary><h3>Prevalenza e esordio</h3></summary>
-          <ul>
-            <li>I cannabinoidi sono tra le sostanze illegali più utilizzate a livello globale.</li>
-            <li>La prevalenza d’uso è del 3,4% tra i 12 e i 17 anni e dell’1,5% negli over 18.</li>
-            <li>L’uso è più frequente nei maschi.</li>
-            <li>L’esordio tipico avviene durante l’adolescenza o la prima età adulta; spesso la cannabis è tra le prime sostanze provate dai giovani insieme a tabacco e alcol.</li>
-            <li>Viene spesso utilizzata per gestire problemi di umore, sonno o dolore fisico.</li>
-          </ul>
-        </details>
-        
-        <details>
-          <summary><h3>Composizione chimica della cannabis e suoi effetti sul corpo umano</h3></summary>
-          <ul>
-            <li>La cannabis contiene oltre 100 cannabinoidi attivi e inattivi, tra cui i più noti sono il THC (tetraidrocannabinolo) e il CBD (cannabidiolo).</li>
-            <li>Il THC è il principale composto psicoattivo, responsabile degli effetti euforici e alterazioni cognitive.</li>
-            <li>Il CBD non è psicoattivo e possiede proprietà antinfiammatorie, ansiolitiche e anticonvulsivanti.</li>
-            <li>La pianta contiene anche circa 140 terpenoidi, che contribuiscono all’aroma e modulano gli effetti dei cannabinoidi (effetto entourage).</li>
-            <li>Vi sono inoltre circa 23 flavonoidi con potenziali proprietà antiossidanti e antinfiammatorie.</li>
-            <li>I cannabinoidi interagiscono con il sistema endocannabinoide umano, influenzando umore, percezione del dolore, memoria e appetito.</li>
-            <li>Gli effetti sul corpo includono alterazioni cognitive, rilassamento muscolare, modifiche dell’umore e potenziali effetti terapeutici.</li>
-            <li>L’effetto complessivo dipende dalla sinergia tra tutti i composti chimici presenti nella pianta.</li>
-          </ul>
-        </details>
-        
+          <div class="card card-custom mb-3">
+            <div class="card-header bg-dark">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#Prevalenza">
+                <span class="icon">▶️</span> Prevalenza e esordio
+              </a>
+            </div>
+            <div class="collapse" id="Prevalenza">
+              <div class="card-body">
+                <ul>
+                  <li>I cannabinoidi sono tra le sostanze illegali più utilizzate a livello globale.</li>
+                  <li>La prevalenza d’uso è del 3,4% tra i 12 e i 17 anni e dell’1,5% negli over 18.</li>
+                  <li>L’uso è più frequente nei maschi.</li>
+                  <li>L’esordio tipico avviene durante l’adolescenza o la prima età adulta; spesso la cannabis è tra le prime sostanze provate dai giovani insieme a tabacco e alcol.</li>
+                  <li>Viene spesso utilizzata per gestire problemi di umore, sonno o dolore fisico.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-        <details>
-          <summary><h3>Fattori di rischio</h3></summary>
-          <ul>
-            <li><strong>Temperamentali:</strong> disturbo della condotta e disturbo antisociale di personalità.</li>
-            <li><strong>Ambientali:</strong> insuccessi scolastici (come una bocciatura), uso di tabacco, situazioni familiari difficili, consumo di cannabis in famiglia, facile reperibilità della sostanza.</li>
-            <li><strong>Genetici e fisiologici:</strong> l’ereditabilità dell’uso di cannabis varia dal 30% all’80%.</li>
-          </ul>
-        </details>
-        
-        <details>
-          <summary><h3>Conseguenze funzionali</h3></summary>
-          <ul>
-            <li>Compromissione delle funzioni cognitive, in particolare delle funzioni esecutive superiori.</li>
-            <li>Aumento dei comportamenti pericolosi e degli incidenti.</li>
-            <li>Rischio di malattie respiratorie e cancro.</li>
-            <li>Peggioramento di altri disturbi mentali; la cannabis sembra essere un possibile fattore causale nella genesi della schizofrenia e di altri disturbi psicotici.</li>
-          </ul>
-        </details>
-        
-        <details>
-          <summary><h3>Comorbilità</h3></summary>
-          <ul>
-            <li>Uso concomitante di altre sostanze: alcol (oltre il 50%) e tabacco (53%).</li>
-            <li>Disturbi d’ansia (24%).</li>
-            <li>Disturbo antisociale di personalità (30%).</li>
-            <li>Disturbo ossessivo-compulsivo (19%).</li>
-            <li>Disturbo paranoide di personalità (18%).</li>
-          </ul>
-        </details>
-        
-        
+          <div class="card card-custom mb-3">
+            <div class="card-header bg-dark">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#Fattori">
+                <span class="icon">▶️</span>Fattori di rischio
+              </a>
+            </div>
+            <div class="collapse" id="Fattori">
+              <div class="card-body">
+                <ul>
+                  <li><strong>Temperamentali:</strong> disturbo della condotta e disturbo antisociale di personalità.</li>
+                  <li><strong>Ambientali:</strong> insuccessi scolastici (come una bocciatura), uso di tabacco, situazioni familiari difficili, consumo di cannabis in famiglia, facile reperibilità della sostanza.</li>
+                  <li><strong>Genetici e fisiologici:</strong> l’ereditabilità dell’uso di cannabis varia dal 30% all’80%.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-    <div class="impaginazione"></div>
-      <nav aria-label="Navigazione tra le pagine">
-        <ul class="pagination justify-content-center">
-          <li class="page-item active" >
-            <a class="page-link" href="../HTML/DIPENDENZA DA CAFFEINA.html">INTOSSICAZIONE DA CAFFEINA</a>
-          </li>
-		  <li class="page-item"><a class="page-link" href="../HTML/ALCOL.html">ALCOL</a></li>
-          <li class="page-item"><a class="page-link" href="../HTML/DISTURBO_DA_CANNABIS.html">DISTURBO DA CANNABIS</a></li>
-        </ul>
-      </nav>
+          <div class="card card-custom mb-3">
+            <div class="card-header bg-dark">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#Conseguenze">
+                <span class="icon">▶️</span>Conseguenze funzionali
+              </a>
+            </div>
+            <div class="collapse" id="Conseguenze">
+              <div class="card-body">
+                <ul>
+                  <li>Compromissione delle funzioni cognitive, in particolare delle funzioni esecutive superiori.</li>
+                  <li>Aumento dei comportamenti pericolosi e degli incidenti.</li>
+                  <li>Rischio di malattie respiratorie e cancro.</li>
+                  <li>Peggioramento di altri disturbi mentali; la cannabis sembra essere un possibile fattore causale nella genesi della schizofrenia e di altri disturbi psicotici.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-custom mb-3">
+            <div class="card-header bg-dark">
+              <a class="collapse-toggle text-decoration-none d-block" data-bs-toggle="collapse" href="#Comorbilità">
+                <span class="icon">▶️</span>Comorbilità
+              </a>
+            </div>
+            <div class="collapse" id="Comorbilità">
+              <div class="card-body">
+                <ul>
+                  <li>Uso concomitante di altre sostanze: alcol (oltre il 50%) e tabacco (53%).</li>
+                  <li>Disturbi d’ansia (24%).</li>
+                  <li>Disturbo antisociale di personalità (30%).</li>
+                  <li>Disturbo ossessivo-compulsivo (19%).</li>
+                  <li>Disturbo paranoide di personalità (18%).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        
+    <div class="impaginazione">
+          <nav aria-label="Navigazione tra le pagine">
+            <ul class="pagination justify-content-center">
+              <li class="page-item active">
+                <a class="page-link" href="../HTML/DIPENDENZA DA CAFFEINA.html">INTOSSICAZIONE DA CAFFEINA</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="../HTML/ALCOL.html">ALCOL</a></li>
+              <li class="page-item"><a class="page-link" href="../HTML/DISTURBO_DA_CANNABIS.html">DISTURBO DA CANNABIS</a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
     </div>
   </div>
- 
+
+  <!-- Footer -->
   <footer class="footer mt-auto">
     <p>Testo footer.</p>
   </footer>
 
+  <!-- Script Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script gestione icone collapse -->
+  <script>
+    document.querySelectorAll('.collapse').forEach(collapse => {
+      const toggle = collapse.previousElementSibling.querySelector('.collapse-toggle');
+      const icon = toggle.querySelector('.icon');
+
+      collapse.addEventListener('show.bs.collapse', () => {
+        collapse.closest('.card-custom').classList.add('active');
+        icon.textContent = '▼';
+      });
+
+      collapse.addEventListener('hide.bs.collapse', () => {
+        collapse.closest('.card-custom').classList.remove('active');
+        icon.textContent = '▶️';
+      });
+    });
+  </script>
 </body>
 </html>
