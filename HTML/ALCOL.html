@@ -158,15 +158,100 @@
                   <li>Diagnosi: ≥2 sintomi per ≥12 mesi.</li>
                   <li>Trattamento multidisciplinare: farmaci, psicoterapia, riabilitazione.</li>
                   <li>Lo stigma può ostacolare la cura.</li>
-                  <li>Lo stigma può ostacolare la cura.</li>
                 </ul>
               </div>
               <img src="https://images2.corriereobjects.it/methode_image/socialshare/2020/06/01/7bcecdb0-a415-11ea-b19d-c124828d4b5b.jpg" alt="Un uomo che beve alcol" width="600" />
 
             </div>
           </div>
-
         </div>
+
+<!-- pagina a scorrimento-->
+ 
+ <div class="container mt-5 mb-5">
+    <div class="content-box row align-items-center">
+      <div class="col-md-6 p-4">
+        <h2 id="title">Introduzione all'Alcolismo</h2>
+        <p id="text">
+          L'abuso di alcol è un problema che colpisce milioni di persone in Italia. Ogni anno, il sistema sanitario spende miliardi per curare le malattie causate dall'alcol.
+        </p>
+        <button class="arrow-btn mt-3" onclick="nextContent()">→</button>
+      </div>
+      <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container" style="display: none;">
+        <div>
+          <h4 class="text-white text-center">Distribuzione dei Costi</h4>
+          <canvas id="pieChart" width="250" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let currentIndex = 0;
+    let pieChart;
+
+    const contents = [
+      {
+        title: "Introduzione all'Alcolismo",
+        text: "L'abuso di alcol è un problema che colpisce milioni di persone in Italia. Ogni anno, il sistema sanitario spende miliardi per curare le malattie causate dall'alcol.",
+        showChart: false
+      },
+      {
+        title: "Costi Economici",
+        text: "I costi economici legati all'alcolismo sono stimati in oltre 50 miliardi di euro all'anno in Italia, tra cui cure sanitarie, perdita di produttività e danni sociali.",
+        showChart: true
+      },
+      {
+        title: "Impatto Sociale",
+        text: "L'alcolismo contribuisce a incidenti stradali, violenza domestica e crimini, aumentando i costi per la giustizia e la sicurezza pubblica.",
+        showChart: false
+      }
+    ];
+
+    function nextContent() {
+      currentIndex = (currentIndex + 1) % contents.length;
+      const content = contents[currentIndex];
+
+      document.getElementById('title').innerText = content.title;
+      document.getElementById('text').innerText = content.text;
+
+      const chartContainer = document.getElementById("chart-container");
+
+      if (content.showChart) {
+        chartContainer.style.display = "flex";
+
+        if (pieChart) pieChart.destroy();
+
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        pieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Sanità', 'Produttività', 'Sicurezza', 'Altro'],
+            datasets: [{
+              label: 'Costi',
+              data: [20, 15, 10, 5],
+              backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545']
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' },
+              title: {
+                display: true,
+                text: 'Ripartizione dei costi legati all’alcolismo',
+                color: 'white'
+              }
+            }
+          }
+        });
+
+      } else {
+        chartContainer.style.display = "none";
+        if (pieChart) pieChart.destroy();
+      }
+    }
+  </script>
 
         <!-- Impaginazione -->
         <div class="impaginazione">
@@ -210,6 +295,8 @@
       });
     });
   </script>
+
+
 </body>
 </html>
 
