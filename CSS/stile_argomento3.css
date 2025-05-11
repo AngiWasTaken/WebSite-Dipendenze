@@ -77,6 +77,6 @@ ul li::before {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 550px;
+  height: 350px;
 }
