@@ -64,7 +64,7 @@ ul {
 }
 
 ul li::before {
-  content: "• ";
+  
   color: #429bf5;
 }
 
@@ -128,4 +128,5 @@ ul li::before {
       border-radius: 12px;
       padding: 20px;
     }
+
 
