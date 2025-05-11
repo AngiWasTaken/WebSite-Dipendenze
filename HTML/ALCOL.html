@@ -303,11 +303,19 @@ function nextContent() {
       </div>
       <button class="arrow-btn mt-3" id="nextBtn3">→</button>
     </div>
-    <div class="col-md-6 p-4 d-flex flex-column align-items-center" id="chart-container3" style="display: none; margin-top: 0; padding-top: 0;">
-      <!-- Grafico a torta -->
-      <canvas id="pieChart3" width="450" height="450"></canvas>
-      <!-- Grafico a barre -->
-      <canvas id="barChart3" width="1" height="1" style="margin-top: 0 !important;"></canvas>
+    <div class="col-md-6 p-4 d-flex flex-column align-items-center">
+      <div style="width: 600px; position: relative; top: 10px; left: 100px;">
+        <img id="alcol8" src="../IMG/alcol8.jpg" alt="Alcol" style="width: 100%; height: auto;">
+      </div>
+      <!-- Questo contenitore viene mostrato solo dopo il clic -->
+      <div id="chart-container3" style="display: none; margin-top: 0; padding-top: 0;">
+        <!-- Grafico a torta -->
+        <canvas id="pieChart3" width="450" height="450"></canvas>
+        <!-- Grafico a barre -->
+         </div>
+      <div>
+        <canvas id="barChart3" width="1" height="1" style="margin-top: 0 !important;"></canvas>
+      </div>
     </div>
   </div>
 </div>
@@ -342,6 +350,8 @@ function nextContent() {
     function nextContent3() {
       currentIndex3 = (currentIndex3 + 1) % contents3.length;
       const content = contents3[currentIndex3];
+      document.getElementById('alcol8').style.display = content.showChart || content.showBarChart ? "none" : "block";
+
 
       document.getElementById('title3').innerText = content.title;
       document.getElementById('text3').innerHTML =
