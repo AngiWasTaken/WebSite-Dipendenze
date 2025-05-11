@@ -76,57 +76,7 @@ ul li::before {
   padding: 10px;
 }
 
-.card-custom.active {
-  box-shadow: 0 0 15px rgba(197, 66, 245, 0.6);
-  background-color: #212529;
+img {
+  max-width: 100%;
+  height: auto;
 }
-
-/* Impaginazione */
-.pagination .page-item .page-link {
-  background-color: #2b2b3d;
-  color: #fff;
-  border: none;
-  margin: 0 5px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.pagination .page-item .page-link:hover {
-  background-color: #4e4e6e;
-  color: #ffffff;
-  transform: scale(1.05);
-}
-
-.pagination .page-item.active .page-link {
-  background-color: #4e4e6e;
-  color: #ffffff;
-}
-
-
-.link-menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  display: block;
-  padding: 8px;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
-
-.link-menu a:hover {
-  background-color: #4e4e6e;
-  color: #ffffff;
-  transform: scale(1.05);
-}
-
-.footer span:hover {
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
- .content-box {
-      background-color: #343a40;
-      border-radius: 12px;
-      padding: 20px;
-    }
-
-
