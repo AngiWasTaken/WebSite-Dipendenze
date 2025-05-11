@@ -115,24 +115,50 @@ ul {
 /*sa sa prova*/
 
     
-    .content-box {
-      background-color: #343a40;
-      border-radius: 12px;
-      padding: 20px;
-    }
-    .arrow-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .arrow-btn:hover {
-      background-color: #0056b3;
-    }
-    #pieChart {
-      max-width: 100%;
-      height: auto;
-    }
+.content-box {
+  background-color: #343a40;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  }
+
+.arrow-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+.arrow-btn:hover {
+  background-color: #0056b3;
+}
+
+#pieChart {
+  max-width: 100%;
+  height: auto;
+      
+}
+
+
+#pieChart3 {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Rimozione margini e padding di base */
+
+#chart-container3 {
+  margin-top: 0 !important; /* Rimuove i margini superiori */
+  padding-top: 0 !important; /* Rimuove eventuali padding */
+}
+
+#barChart3 {
+  margin-top: 0 !important; /* Rimuove i margini superiori */
+}
