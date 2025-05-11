@@ -166,3 +166,11 @@ img {
   width: 500px;
   height: 350px;
 }
+#chart-container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrare orizzontalmente */
+  justify-content: center; /* centrare verticalmente */
+  padding: 0;
+  margin: 0;
+}

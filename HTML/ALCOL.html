@@ -76,7 +76,7 @@
     {
       title: "Dati Epidemiologici",
       text: [
-        "Distribuzione id un consumo problematio",
+        "Distribuzione di un consumo problematio",
         "20-30% di consumatori a rischio",
         "10-15% con dipendenza grave",
         "50-60% consumatori moderati",
@@ -152,13 +152,12 @@ function nextContent() {
 
 
 
-
 <!-- Secondo menu a scorrimento - layout invertito -->
 <div class="container mt-5 mb-5">
   <div class="content-box row align-items-center flex-row-reverse">
     <div class="col-md-6 p-4">
-      <h2 id="title2">:::::: Inserire titolo</h2>
-      <p id="text2">.</p>
+      <h2 id="title2">Risci e Effetti </h2>
+      <p id="text2"></p>
       <button class="arrow-btn mt-3" onclick="nextContent2()">→</button>
     </div>
     <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container2" style="display: none;">
@@ -192,14 +191,14 @@ function nextContent() {
   {
     title: "Informazioni Rilevanti",
     text: [
-      "Il disturbo da uso di alcol (AUD) comporta danni fisici, psicologici e sociali, con effetti su fegato, cuore, cervello e relazioni. I principali fattori di rischio includono genetica, stress, ambiente sociale e comportamenti impulsivi."
+      "Il disturbo da uso di alcol (AUD) comporta danni fisici, psicologici e sociali, con effetti su fegato, cuore, cervello e relazioni personali. I principali fattori di rischio includono genetica, stress, ambiente sociale e comportamenti impulsivi."
     ],
     showChart: false
   },
   {
     title: "Patologie Associate",
     text: [
-      "Malattie cardiovascolari: ipertensione, insufficienza cardiaca e arritmie.",
+      "Malattie cardiovascolari: ipertensione, insufficienza cardiaca e aritmie.",
       "Tumori: aumento del rischio di tumori al fegato, bocca, esofago e seno.",
       "Malattie epatiche: cirrosi epatica, epatite alcolica e steatosi epatica.",
       "Problemi neurologici: demenza, neuropatia alcolica e danni cognitivi."
@@ -407,6 +406,7 @@ function nextContent() {
           },
           options: {
             responsive: true,
+             maintainAspectRatio: true, 
             plugins: {
               legend: { position: 'top' },
               title: {
