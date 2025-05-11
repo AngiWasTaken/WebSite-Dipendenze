@@ -187,9 +187,8 @@
     currentIndex2 = (currentIndex2 + 1) % contents2.length;
     const content = contents2[currentIndex2];
 
-    document.getElementById('title2').innerText = content.title;
-    document.getElementById('text2').innerHTML =
-      "<ul>" + content.text.map(t => `<li>${t}</li>`).join('') + "</ul>";
+ document.getElementById('text2').innerHTML =
+  content.text.map(t => `<p>${t}</p>`).join('');
 
     const chartContainer2 = document.getElementById("chart-container2");
 
@@ -225,109 +224,149 @@
   }
 </script>
 
-        <!-- Terzo menu a scorrimento -->
-        <div class="container mt-5 mb-5">
-          <div class="content-box row align-items-center">
-            <div class="col-md-6 p-4">
-              <h2 id="title3">Costi Economici</h2>
-              <p id="text3">I costi economici del disturbo da alcol comprendono le spese dirette, come quelle sanitarie, e le indirette, come la perdita di produttività e l'aumento della criminalità. Questi costi gravano sulla società e sul sistema sanitario, rappresentando una sfida significativa per la salute pubblica ed economica.</p>
-              <button class="arrow-btn mt-3" onclick="nextContent3()">→</button>
-            </div>
-            <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container3" style="display: none;">
-              <div>
-                <canvas id="pieChart3" width="250" height="250"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-
+<!-- Terzo menu a scorrimento -->
+<div class="container mt-5 mb-5">
+  <div class="content-box row align-items-center">
+    <div class="col-md-6 p-4">
+      <h2 id="title3">Costi Economici</h2>
+      <div id="text3">
+        I costi economici del disturbo da alcol comprendono le spese dirette, come quelle sanitarie, e le indirette, come la perdita di produttività e l'aumento della criminalità. Questi costi gravano sulla società e sul sistema sanitario, rappresentando una sfida significativa per la salute pubblica ed economica.
       </div>
+      <button class="arrow-btn mt-3" id="nextBtn3">→</button>
+    </div>
+    <div class="col-md-6 p-4 d-flex flex-column align-items-center" id="chart-container3" style="display: none;">
+      <canvas id="pieChart3" width="250" height="250" class="mb-4"></canvas>
+      <canvas id="barChart3" width="300" height="200"></canvas>
     </div>
   </div>
+</div>
 
 <script>
-  let currentIndex3 = 0;
-  let myChart3;
+  document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex3 = 0;
+    let myChart3 = null;
+    //let barChart3 = null;
 
-  const contents3 = [
-    {
-      title: "Impatto su salute e mortalità",
-      text: ["La dipendenza da alcol è la seconda causa di morte evitabile dopo il fumo.",
-            "Circa 17.000 morti l’anno in Italia sono attribuibili all’alcol (fonte: ISS).",
-             "’alcol è associato a oltre 200 malattie, tra cui cirrosi epatica, alcuni tumori, patologie cardiovascolari e disturbi psichiatrici.",
-      ],
-      showChart: false
-    },
-    {
-      title: " Accesso ai servizi di cura",
-      text: ["Solo una piccola percentuale delle persone con disturbo da uso di alcol riceve un trattamento adeguato.",
-              "I servizi alcologici sono spesso inglobati nei servizi per le dipendenze, con poche strutture specializzate."
-      ],
-      showChart: false
-    },
-    {
-      title: "Costo totale annuale",
-      text: ["Secondo i dati del Ministero della Salute il costo annuale stimato si aggira tra i 25 - 33 miliardi di euro ",
-             "Di questi: ",
-             "Circa 6-7 miliardi di € sono i costi diretti sanitari",
-             "Mentre arrivano vino a 20 miliardi di € (perdita di produttività, invalidità, pensionamenti anticipiati)",
-
-      ],
-      showChart: true
-    }
-  ];
-
-function nextContent3() {
-  currentIndex3 = (currentIndex3 + 1) % contents3.length;
-  const content = contents3[currentIndex3];
-
-  document.getElementById('title3').innerText = content.title;
-  document.getElementById('text3').innerHTML =
-    "<ul>" + content.text.map(t => `<li>${t}</li>`).join('') + "</ul>";
-
-  const chartContainer3 = document.getElementById("chart-container3");
-
-  if (content.showChart) {
-    chartContainer3.style.display = "flex";
-
-    const ctx3 = document.getElementById('pieChart3').getContext('2d');
-    if (myChart3) myChart3.destroy();
-
-    myChart3 = new Chart(ctx3, {
-      type: 'pie',
-      data: {
-        labels: ['costi diretti sanitari', 'costi indiretti ', 'Altro/non specificato'],
-        datasets: [{
-          label: 'euro (%)',
-          data: [24, 69, 7],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)'
-          ],
-          borderWidth: 1
-        }]
+    const contents3 = [
+      {
+        title: "Impatto su salute e mortalità",
+        text: [
+          "La dipendenza da alcol è la seconda causa di morte evitabile dopo il fumo.",
+          "Circa 17.000 morti l’anno in Italia sono attribuibili all’alcol (fonte: ISS).",
+          "L’alcol è associato a oltre 200 malattie, tra cui cirrosi epatica, alcuni tumori, patologie cardiovascolari e disturbi psichiatrici."
+        ],
+        showChart: false,
+        //showBarChart: false
       },
-      options: {
-        plugins: {
-          legend: { position: 'bottom' }
+      {
+        title: "Accesso ai servizi di cura",
+        text: [
+          "Solo una piccola percentuale delle persone con disturbo da uso di alcol riceve un trattamento adeguato.",
+          "I servizi alcologici sono spesso inglobati nei servizi per le dipendenze, con poche strutture specializzate."
+        ],
+        showChart: false,
+        //showBarChart: true
+      },
+      {
+        title: "Costo totale annuale",
+        text: [
+          "Secondo i dati del Ministero della Salute il costo annuale stimato si aggira tra i 25 - 33 miliardi di euro.",
+          "Di questi:",
+          "Circa 6-7 miliardi di € sono i costi diretti sanitari",
+          "Mentre arrivano fino a 20 miliardi di € (perdita di produttività, invalidità, pensionamenti anticipati)"
+        ],
+        showChart: true,
+       // showBarChart: true
+      }
+    ];
+
+    function nextContent3() {
+      currentIndex3 = (currentIndex3 + 1) % contents3.length;
+      const content = contents3[currentIndex3];
+
+      document.getElementById('title3').innerText = content.title;
+      document.getElementById('text3').innerHTML =
+        "<ul>" + content.text.map(t => `<li>${t}</li>`).join('') + "</ul>";
+
+      const chartContainer3 = document.getElementById("chart-container3");
+
+      if (content.showChart || content.showBarChart) {
+        chartContainer3.style.display = "flex";
+      } else {
+        chartContainer3.style.display = "none";
+      }
+
+      // Pie Chart
+      if (content.showChart) {
+        const ctx3 = document.getElementById('pieChart3').getContext('2d');
+        if (myChart3) myChart3.destroy();
+        myChart3 = new Chart(ctx3, {
+          type: 'pie',
+          data: {
+            labels: ['Costi Diretti Sanitari', 'Costi Indiretti', 'Altro/Non specificato'],
+            datasets: [{
+              data: [24, 69, 7],
+              backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)'],
+              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            plugins: {
+              legend: { position: 'bottom' }
+            }
+          }
+        });
+      } else {
+        if (myChart3) {
+          myChart3.destroy();
+          myChart3 = null;
         }
       }
-    });
-  } else {
-    chartContainer3.style.display = "none";
-    if (myChart3) myChart3.destroy();
-  }
-}
 
+      /* Bar Chart
+      if (content.showBarChart) {
+        const barCtx3 = document.getElementById('barChart3').getContext('2d');
+        if (barChart3) barChart3.destroy();
+        barChart3 = new Chart(barCtx3, {
+          type: 'bar',
+          data: {
+            labels: ['Costi Sanitari', 'Perdita Produttività', 'Criminalità', 'Altro'],
+            datasets: [{
+              label: 'Milioni di Euro',
+              data: [6500, 18000, 2500, 1000],
+              backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Distribuzione dei Costi Economici (stima)'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      } else {
+        if (barChart3) {
+          barChart3.destroy();
+          barChart3 = null;
+        }
+      }
+    }
+
+    // Attacco evento al bottone
+    document.getElementById("nextBtn3").addEventListener("click", nextContent3);
+  });*/
 </script>
+
 
  <div class="impaginazione">
           <nav aria-label="Navigazione tra le pagine">
