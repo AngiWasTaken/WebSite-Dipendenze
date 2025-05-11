@@ -166,3 +166,35 @@ img {
   width: 500px;
   height: 350px;
 }
+
+
+
+/* Stile per la card */
+.card-custom {
+  border: 2px solid #007bff; /* Bordo blu */
+  border-radius: 10px; /* Angoli arrotondati */
+}
+
+/* Stile per il corpo della card */
+.card-custom .card-body {
+  background-color: #1e1e2f; /* Colore di sfondo della pagina */
+  color: white; /* Testo bianco */
+  border-radius: 10px; /* Angoli arrotondati */
+  text-align: left; /* Allinea il testo a sinistra */
+}
+
+/* Stile per i link all'interno della card */
+.card-custom .card-body a {
+  color: white; /* Colore bianco per i link */
+  text-decoration: underline; /* Sottolinea i link */
+}
+
+.card-custom .card-body a:hover {
+  color: #007bff; /* Cambia colore al passaggio del mouse */
+}
+
+div.card-custom .card-body {
+  background-color: #1e1e2f !important; /* Forza il colore di sfondo */
+  color: white !important; /* Forza il colore del testo */
+  text-align: left !important; /* Forza l'allineamento del testo */
+}
