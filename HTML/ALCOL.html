@@ -264,16 +264,14 @@
           "L’alcol è associato a oltre 200 malattie, tra cui cirrosi epatica, alcuni tumori, patologie cardiovascolari e disturbi psichiatrici."
         ],
         showChart: false,
-        showBarChart: true
+        showBarChart: false
       },
       {
-        title: "Accesso ai servizi di cura",
+        title: "Classifica per Consumo di alcol puro pro capite (annuale)",
         text: [
-          "Solo una piccola percentuale delle persone con disturbo da uso di alcol riceve un trattamento adeguato.",
-          "I servizi alcologici sono spesso inglobati nei servizi per le dipendenze, con poche strutture specializzate."
-        ],
+          "La classifica per consumo di alcol puro pro capite (annuale) ordina i paesi in base alla quantità di alcol puro consumato in un anno per persona (adulti sopra i 15 anni). Paesi come Moldavia, Bielorussia e Russia sono tra i più alti consumatori, mentre nazioni con restrizioni sull'alcol, come Libia e Arabia Saudita, hanno consumi molto bassi o nulli. Questa classifica aiuta a comprendere le differenze culturali e le politiche sanitarie relative al consumo di alcol."],
         showChart: false,
-        showBarChart: false
+        showBarChart: true
       },
       {
         title: "Costo totale annuale",
@@ -339,16 +337,12 @@
         myBarChart = new Chart(ctxBar, {
           type: 'bar',
           data: {
-            labels: ['Stati Uniti', 'Italia', 'Germania', 'Francia', 'Regno Unito'],
+            labels: ['Romania', 'Georgia', 'Lettonia', 'lituania', 'Repubblica Ceca',"Germania","Polonia","Bielorussia","Bulgaria","Austria","Uganda","Burkina Faso","Stati Uniti", "italia"],
             datasets: [{
-              label: 'Costi Diretti (miliardi €)',
-              data: [6, 6.5, 7, 5, 3],
-              backgroundColor: '#36A2EB'
-            }, {
-              label: 'Costi Indiretti (miliardi €)',
-              data: [20, 18, 21, 15, 12],
-              backgroundColor: '#FF6384'
-            }]
+              label: 'Litri',
+              data: [16.80 , 14.41, 12.87, 12.10, 11.99 ,11.84,11.66,11.63,11.62,11.51,11.30,11.27,11.08, 9.90,6.97],
+              backgrounColor: '#36A2EB'
+            }, ]
           },
           options: {
             responsive: true,
