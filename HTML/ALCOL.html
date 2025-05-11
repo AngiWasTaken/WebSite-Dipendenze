@@ -26,186 +26,180 @@
     <div class="row flex-grow-1">
       <div class="col contenuto-principale d-flex flex-column justify-content-center align-items-center text-center p-4">
         
-        <h1><strong>Disturbo da Uso di Alcol</strong></h1>
+        <h1><strong>Disturbo da Uso di Alcol<br></strong></h1>
         <p class="w-75">
           Il disturbo da uso di alcol è una condizione cronica e spesso invalidante. È caratterizzato da un consumo incontrollato nonostante le conseguenze negative, con forti implicazioni per la salute pubblica.
         </p>
 
-        <!-- Sezione a scorrimento -->
-        <div class="container mt-5 mb-5">
-          <div class="content-box row align-items-center">
-            <div class="col-md-6 p-4">
-              <h2 id="title">Introduzione all'Alcolismo</h2>
-              <p id="text"></p>
-              <button class="arrow-btn mt-3" onclick="nextContent()">→</button>
-            </div>
-            <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container" style="display: none;">
-              <div>
-                <canvas id="pieChart" width="250" height="250"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
- <script>
-    let currentIndex = 0;
-    let pieChart;
+<!-- Sezione a scorrimento -->
+<div class="container mt-5 mb-5">
+  <div class="content-box row align-items-center">
+    <div class="col-md-6 p-4">
+      <h2 id="title">Introduzione all'Alcolismo</h2>
+      <p id="text"></p>
+      <button class="arrow-btn mt-3" onclick="nextContent()">→</button>
+    </div>
+    <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container" style="display: none;">
+      <div>
+        <canvas id="myPieChart" width="400" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
 
-    const contents = [
+<script>
+  let currentIndex = 0;
+  let myPieChart = null;  // Inizializza la variabile del grafico a torta
 
- 
-      {
-      title: " Composizione Chimica ed Effetti",
+  const contents = [
+    {
+      title: "Composizione Chimica ed Effetti",
       text: [
-      "Formula chimica: C₂H₆O",
-      "Depressore del sistema nervoso centrale",
-      "Agisce su dopamina e inibizione cognitiva",
-      "Danni a lungo termine a fegato, cervello, cuore"
-       ],
-       showChart: false,
-       image: "..\WebSite-Dipendenze-main\immagini"
-       },
-
-  {
-        title: "Cos'è la Dipendenza da Alcol",
-        text: "La dipendenza da alcol si manifesta quando il consumo diventa compulsivo. Il soggetto sviluppa tolleranza e sintomi d’astinenza, con conseguenze su salute fisica e mentale",
-        showChart: false,
-        image: "https://via.placeholder.com/600x300" 
-      },
-          {
+        "Formula chimica: C₂H₆O",
+        "Effetti che provoca: ", 
+        "Depressione e ansia: l'alcol può causare  disturbi psichiatrici, tra cui depressione, ansia e disturbi dell'umore.",
+        "Deterioramento cognitivo: l'uso eccessivo di alcol può ridurre le capacità cognitive, portando a difficoltà di concentrazione, apprendimento e memoria",
+        "Malattie cardiovascolari: ipertensione, infarti e aritmie.",
+        "Malattie epatiche: cirrosi epatica, epatite alcolica e danni al fegato.",
+      
+      ],
+      showChart: false,
+    },
+    {
+      title: "Cos'è la Dipendenza da Alcol",
+      text: "La dipendenza da alcol si manifesta quando il consumo diventa compulsivo. Il soggetto sviluppa tolleranza e sintomi d’astinenza, con conseguenze su salute fisica e mentale",
+      showChart: false,
+    },
+    {
       title: "Dati Epidemiologici",
       text: [
-      "Colpisce circa l'8,5% degli adulti",
-      "Esordio precoce tra i 15 e 17 anni",
-      "Più frequente nei maschi",
-      "Condizione cronica e recidivante"
-       ],
-       showChart: true,
-      },
-      
-    ];
+        "Distribuzione id un consumo problematio",
+        "20-30% di consumatori a rischio",
+        "10-15% con dipendenza grave",
+        "50-60% consumatori moderati",
+        "10% non consumatori (chi non beve alcol o non ne fa uso regolare)"
+      ],
+      showChart: true, // Mostra il grafico a torta
+    },
+  ];
 
-    function nextContent() {
-      currentIndex = (currentIndex + 1) % contents.length;
-      const content = contents[currentIndex];
-  
-      document.getElementById('text3').style.lineHeight = '0.8'; // Riduce lo spazio tra le righe
+  function nextContent() {
+    currentIndex = (currentIndex + 1) % contents.length;
+    const content = contents[currentIndex];
+
     document.getElementById('title').innerText = content.title;
     document.getElementById('text').innerHTML = Array.isArray(content.text)
-    ? content.text.map(t => `<p>${t}</p>`).join('')
-    : `<p>${content.text}</p>`;
+      ? content.text.map(t => `<p>${t}</p>`).join('')
+      : `<p>${content.text}</p>`;
 
+    const chartContainer = document.getElementById("chart-container");
 
-      const chartContainer = document.getElementById("chart-container");
+    if (content.showChart) {
+      chartContainer.style.display = "flex";  // Mostra il contenitore del grafico
 
-      if (content.showChart) {
-        chartContainer.style.display = "flex";
-        if (pieChart) pieChart.destroy();
+      // Distruggi il grafico esistente se presente
+      if (myPieChart) {
+        myPieChart.destroy();
+      }
 
-        const ctx = document.getElementById('pieChart').getContext('2d');
-        pieChart = new Chart(ctx, {
-          type: 'pie',
-          data: {
-            labels: ['Sanità', 'Produttività', 'Sicurezza', 'Altro'],
-            datasets: [{
-              data: [20, 15, 10, 5],
-              backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545']
-            }]
-          },
-          options: {
-            plugins: {
-              legend: { position: 'bottom' },
-              title: {
-                display: true,
-                text: 'Ripartizione dei costi dell’alcolismo',
-                color: 'white'
-              }
+      // Crea un nuovo grafico a torta solo se necessario
+      const ctx = document.getElementById('myPieChart').getContext('2d');
+      myPieChart = new Chart(ctx, {
+        type: 'pie',  // Tipo di grafico: a torta
+        data: {
+          labels: ['consumatori a rischio', ' dipendenza grave', ' consumatori moderati', 'non consumatori '],  // Etichette della torta
+          datasets: [{
+            data: [25, 10, 55, 10],  // Dati della torta
+            backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545'],  // Colori delle fette
+            borderWidth: 1
+          }]
+        },
+        options: {
+          plugins: {
+            legend: { position: 'bottom' },  // Posizione della legenda
+            title: {
+              display: true,
+              text: 'Tipologia di consumo problematico',  // Titolo del grafico
+              color: 'black'  // Colore del titolo
             }
           }
-        });
-      } else {
-        chartContainer.style.display = "none";
-        if (pieChart) pieChart.destroy();
+        }
+      });
+    } else {
+      chartContainer.style.display = "none";  // Nascondi il contenitore del grafico
+      if (myPieChart) {
+        myPieChart.destroy();  // Distruggi il grafico se non è necessario
       }
     }
-  </script>
-
+  }
+</script>
         <!-- Secondo menu a scorrimento - layout invertito -->
         <div class="container mt-5 mb-5">
           <div class="content-box row align-items-center flex-row-reverse">
             <div class="col-md-6 p-4">
-              <h2 id="title2">Genetica e Predisposizione</h2>
+              <h2 id="title2">:::::: Inserire titolo</h2>
               <p id="text2">.</p>
               <button class="arrow-btn mt-3" onclick="nextContent2()">→</button>
             </div>
             <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container2" style="display: none;">
               <div>
-                <canvas id="pieChart2" width="250" height="250"></canvas>
+               <!-- <canvas id="pieChart2" width="250" height="250"></canvas>-->
               </div>
             </div>
           </div>
         </div>
 <script>
-  let currentIndex3 = 0;
-  let pieChart3;
+  let currentIndex2 = 0;
+  let pieChart2;
 
-  const contents3 = [
+  const contents2 = [
     {
-      title: " Fattori di Rischio",
-      text:[
-      "Genetici: familiarità",
-      "Psicologici: trauma, ansia, depressione",
-      "Sociali: accessibilità e normalizzazione dell’alcol",
-       ],
-       showChart: true,
-       image: "https://via.placeholder.com/600x300" 
-      },
-       {
-      title: "  Informazioni Rilevanti",
-      text:[
-      "55% degli incidenti stradali coinvolgono l’alcol",
-      "Può provocare comportamenti violenti e suicidari",
-      "Astinenza grave: delirium tremens",
-       ],
-       showChart: true,
-       image: "https://via.placeholder.com/600x300" 
-      },
-          {
-      title: " Patologie Associate",
-      text:[
-      "Disturbi bipolari, depressivi e d’ansia",
-      "Disturbo antisociale di personalità",
-      "Sindrome di Korsakov",
-       ],
-       showChart: true,
-       image: "https://via.placeholder.com/600x300" 
-      },
-      {
-      title: "  Altre Considerazioni",
-      text:[
-      "Diagnosi: almeno 2 sintomi per 12 mesi",
-      "Necessario approccio terapeutico integrato",
-      "Lo stigma può ostacolare la cura",
-       ],
-       showChart: true,
-       image: "https://via.placeholder.com/600x300" 
-      },
+      title: "Fattori di Rischio",
+      text: [
+        "Fattori di rischio principali per il disturbo da uso di alcol:",
+        "Genetici e familiari: storia familiare di alcolismo aumenta il rischio.",
+        "Psicologici: ansia, depressione e bassa autostima sono fattori predisponenti.",
+        "Sociali e ambientali: influenze sociali e culturali che normalizzano il consumo di alcol.",
+        "Personali e comportamentali: tendenze impulsive e mancanza di controllo nel consumo."
+      ],
+      showChart: true
+    },
+    {
+      title: "Informazioni Rilevanti",
+      text: [
+        "Il disturbo da uso di alcol (AUD) comporta danni fisici, psicologici e sociali, con effetti su fegato, cuore, cervello e relazioni. I principali fattori di rischio includono genetica, stress, ambiente sociale e comportamenti impulsivi."
+      ],
+      showChart: true
+    },
+    {
+      title: "Patologie Associate",
+      text: [
+        "Malattie cardiovascolari: ipertensione, insufficienza cardiaca e arritmie.",
+        "Tumori: aumento del rischio di tumori al fegato, bocca, esofago e seno.",
+        "Malattie epatiche: cirrosi epatica, epatite alcolica e steatosi epatica.",
+        "Problemi neurologici: demenza, neuropatia alcolica e danni cognitivi."
+      ],
+      showChart: true
+    }
   ];
 
-  function nextContent3() {
-    currentIndex3 = (currentIndex3 + 1) % contents3.length;
-    const content = contents3[currentIndex3];
+  function nextContent2() {
+    currentIndex2 = (currentIndex2 + 1) % contents2.length;
+    const content = contents2[currentIndex2];
 
-    document.getElementById('title3').innerText = content.title;
-    document.getElementById('text3').innerText = content.text;
+    document.getElementById('title2').innerText = content.title;
+    document.getElementById('text2').innerHTML =
+      "<ul>" + content.text.map(t => `<li>${t}</li>`).join('') + "</ul>";
 
-    const chartContainer3 = document.getElementById("chart-container3");
+    const chartContainer2 = document.getElementById("chart-container2");
 
     if (content.showChart) {
-      chartContainer3.style.display = "flex";
-      if (pieChart3) pieChart3.destroy();
+      chartContainer2.style.display = "flex";
 
-      const ctx3 = document.getElementById('pieChart3').getContext('2d');
-      pieChart3 = new Chart(ctx3, {
+      const ctx2 = document.getElementById('pieChart2').getContext('2d');
+      if (pieChart2) pieChart2.destroy();
+
+      pieChart2 = new Chart(ctx2, {
         type: 'pie',
         data: {
           labels: ['Genetica', 'Ambiente', 'Altri Fattori'],
@@ -219,15 +213,14 @@
             legend: { position: 'bottom' },
             title: {
               display: true,
-              text: 'Fattori di rischio per la dipendenza',
-              color: 'white'
+              text: 'Fattori di rischio per la dipendenza'
             }
           }
         }
       });
     } else {
-      chartContainer3.style.display = "none";
-      if (pieChart3) pieChart3.destroy();
+      chartContainer2.style.display = "none";
+      if (pieChart2) pieChart2.destroy();
     }
   }
 </script>
@@ -236,8 +229,8 @@
         <div class="container mt-5 mb-5">
           <div class="content-box row align-items-center">
             <div class="col-md-6 p-4">
-              <h2 id="title3">Fattori Psicologici</h2>
-              <p id="text3">Alcuni individui ricorrono all’alcol per gestire ansia, stress o depressione.</p>
+              <h2 id="title3">Costi Economici</h2>
+              <p id="text3">I costi economici del disturbo da alcol comprendono le spese dirette, come quelle sanitarie, e le indirette, come la perdita di produttività e l'aumento della criminalità. Questi costi gravano sulla società e sul sistema sanitario, rappresentando una sfida significativa per la salute pubblica ed economica.</p>
               <button class="arrow-btn mt-3" onclick="nextContent3()">→</button>
             </div>
             <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container3" style="display: none;">
@@ -251,83 +244,89 @@
       </div>
     </div>
   </div>
-  <!-- Terzo menu a scorrimento -->
-<div class="container mt-5 mb-5">
-  <div class="content-box row align-items-center">
-    <div class="col-md-6 p-4">
-      <h2 id="title2">Fattori Psicologici</h2>
-      <p id="text2">Alcuni individui ricorrono all’alcol per gestire ansia, stress o depressione.</p>
-      <button class="arrow-btn mt-3" onclick="nextContent2()">→</button>
-    </div>
-    <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container2" style="display: none;">
-      <div>
-        <h4 class="text-white text-center">Esempio di Grafico</h4>
-        <canvas id="pieChart2" width="250" height="250"></canvas>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  let currentIndex2 = 0;
-  let pieChart2;
 
-  const contents2 = [
+<script>
+  let currentIndex3 = 0;
+  let myChart3;
+
+  const contents3 = [
     {
-      title: "Fattori Psicologici",
-      text: "Alcuni individui ricorrono all’alcol per gestire ansia, stress o depressione.",
+      title: "Impatto su salute e mortalità",
+      text: ["La dipendenza da alcol è la seconda causa di morte evitabile dopo il fumo.",
+            "Circa 17.000 morti l’anno in Italia sono attribuibili all’alcol (fonte: ISS).",
+             "’alcol è associato a oltre 200 malattie, tra cui cirrosi epatica, alcuni tumori, patologie cardiovascolari e disturbi psichiatrici.",
+      ],
       showChart: false
     },
     {
-      title: "Condizionamenti Sociali",
-      text: "Pressioni sociali o ambienti permissivi aumentano il rischio di abuso.",
+      title: " Accesso ai servizi di cura",
+      text: ["Solo una piccola percentuale delle persone con disturbo da uso di alcol riceve un trattamento adeguato.",
+              "I servizi alcologici sono spesso inglobati nei servizi per le dipendenze, con poche strutture specializzate."
+      ],
       showChart: false
     },
     {
-      title: "Statistiche Globali",
-      text: "Nel mondo, circa 3 milioni di morti annue sono legate all’alcol.",
+      title: "Costo totale annuale",
+      text: ["Secondo i dati del Ministero della Salute il costo annuale stimato si aggira tra i 25 - 33 miliardi di euro ",
+             "Di questi: ",
+             "Circa 6-7 miliardi di € sono i costi diretti sanitari",
+             "Mentre arrivano vino a 20 miliardi di € (perdita di produttività, invalidità, pensionamenti anticipiati)",
+
+      ],
       showChart: true
     }
   ];
 
-  function nextContent2() {
-    currentIndex2 = (currentIndex2 + 1) % contents2.length;
-    const content = contents2[currentIndex2];
+function nextContent3() {
+  currentIndex3 = (currentIndex3 + 1) % contents3.length;
+  const content = contents3[currentIndex3];
 
-    document.getElementById('title2').innerText = content.title;
-    document.getElementById('text2').innerText = content.text;
+  document.getElementById('title3').innerText = content.title;
+  document.getElementById('text3').innerHTML =
+    "<ul>" + content.text.map(t => `<li>${t}</li>`).join('') + "</ul>";
 
-    const chartContainer2 = document.getElementById("chart-container2");
+  const chartContainer3 = document.getElementById("chart-container3");
 
-    if (content.showChart) {
-      chartContainer2.style.display = "flex";
-      if (pieChart2) pieChart2.destroy();
+  if (content.showChart) {
+    chartContainer3.style.display = "flex";
 
-      const ctx2 = document.getElementById('pieChart2').getContext('2d');
-      pieChart2 = new Chart(ctx2, {
-        type: 'pie',
-        data: {
-          labels: ['Europa', 'Americhe', 'Asia', 'Africa'],
-          datasets: [{
-            data: [30, 25, 20, 15],
-            backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545']
-          }]
-        },
-        options: {
-          plugins: {
-            legend: { position: 'bottom' },
-            title: {
-              display: true,
-              text: 'Distribuzione della mortalità legata all’alcol',
-              color: 'white'
-            }
-          }
+    const ctx3 = document.getElementById('pieChart3').getContext('2d');
+    if (myChart3) myChart3.destroy();
+
+    myChart3 = new Chart(ctx3, {
+      type: 'pie',
+      data: {
+        labels: ['costi diretti sanitari', 'costi indiretti ', 'Altro/non specificato'],
+        datasets: [{
+          label: 'euro (%)',
+          data: [24, 69, 7],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
         }
-      });
-    } else {
-      chartContainer2.style.display = "none";
-      if (pieChart2) pieChart2.destroy();
-    }
+      }
+    });
+  } else {
+    chartContainer3.style.display = "none";
+    if (myChart3) myChart3.destroy();
   }
+}
+
 </script>
 
   <!-- Footer -->
