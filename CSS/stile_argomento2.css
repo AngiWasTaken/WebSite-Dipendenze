@@ -131,6 +131,7 @@ ul {
       height: auto;
     }
 
-    .img {
-      background-color: transparent;
-    }
+    img {
+  max-width: 100%;
+  height: auto;
+}
