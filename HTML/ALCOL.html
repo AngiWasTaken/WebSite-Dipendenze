@@ -133,6 +133,10 @@
     }
   }
 </script>
+
+
+
+
 <!-- Secondo menu a scorrimento - layout invertito -->
 <div class="container mt-5 mb-5">
   <div class="content-box row align-items-center flex-row-reverse">
@@ -240,11 +244,11 @@
       </div>
       <button class="arrow-btn mt-3" id="nextBtn3">→</button>
     </div>
-    <div class="col-md-6 p-4 d-flex flex-column align-items-center" id="chart-container3" style="display: none;">
+    <div class="col-md-6 p-4 d-flex flex-column align-items-center" id="chart-container3" style="display: none; margin-top: 0; padding-top: 0;">
       <!-- Grafico a torta -->
-      <canvas id="pieChart3" width="80" height="80" class="mb-4"></canvas>
+      <canvas id="pieChart3" width="450" height="450"></canvas>
       <!-- Grafico a barre -->
-      <canvas id="barChart3" width="80" height="80"></canvas>
+      <canvas id="barChart3" width="1" height="1" style="margin-top: 0 !important;"></canvas>
     </div>
   </div>
 </div>
@@ -318,8 +322,15 @@
             }]
           },
           options: {
+            responsive: true,
+            maintainAspectRatio: true, // Mantieni il rapporto d'aspetto
             plugins: {
-              legend: { position: 'bottom' }
+              legend: { position: 'bottom' },
+              title: {
+                display: true,
+                text: 'Distribuzione dei Costi Economici',
+                color: '#000'
+              }
             }
           }
         });
@@ -337,20 +348,35 @@
         myBarChart = new Chart(ctxBar, {
           type: 'bar',
           data: {
-            labels: ['Romania', 'Georgia', 'Lettonia', 'lituania', 'Repubblica Ceca',"Germania","Polonia","Bielorussia","Bulgaria","Austria","Uganda","Burkina Faso","Stati Uniti", "italia"],
+            labels: ['Romania', 'Georgia', 'Lettonia', 'Lituania', 'Repubblica Ceca', 'Germania', 'Polonia', 'Bielorussia', 'Bulgaria', 'Austria', 'Uganda', 'Burkina Faso', 'Stati Uniti', 'Italia'],
             datasets: [{
               label: 'Litri',
-              data: [16.80 , 14.41, 12.87, 12.10, 11.99 ,11.84,11.66,11.63,11.62,11.51,11.30,11.27,11.08, 9.90,6.97],
-              backgrounColor: '#36A2EB'
-            }, ]
+              data: [16.80, 14.41, 12.87, 12.10, 11.99, 11.84, 11.66, 11.63, 11.62, 11.51, 11.30, 11.27, 11.08, 9.90],
+              backgroundColor: '#36A2EB'
+            }]
           },
           options: {
             responsive: true,
             plugins: {
-              legend: { position: 'top' }
+              legend: { position: 'top' },
+              title: {
+                display: true,
+                text: 'Consumo di alcol puro pro capite (litri)',
+                padding: {
+                  top: 0, // Riduce il padding superiore del titolo
+                  bottom: 10
+                }
+              }
+            },
+            layout: {
+              padding: {
+                top: 0, // Riduce il padding superiore del grafico
+                bottom: 0
+              }
             },
             scales: {
-              x: { beginAtZero: true }
+              x: { beginAtZero: true },
+              y: { beginAtZero: true }
             }
           }
         });
