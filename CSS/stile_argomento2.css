@@ -135,3 +135,24 @@ img {
   width: 600px;
   height: 400px;
 }
+.link-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: block;
+  padding: 8px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.link-menu a:hover {
+  background-color: #4e4e6e;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.footer span:hover {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
