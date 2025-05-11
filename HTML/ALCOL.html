@@ -241,7 +241,10 @@
       <button class="arrow-btn mt-3" id="nextBtn3">→</button>
     </div>
     <div class="col-md-6 p-4 d-flex flex-column align-items-center" id="chart-container3" style="display: none;">
+      <!-- Grafico a torta -->
       <canvas id="pieChart3" width="80" height="80" class="mb-4"></canvas>
+      <!-- Grafico a barre -->
+      <canvas id="barChart3" width="80" height="80"></canvas>
     </div>
   </div>
 </div>
@@ -249,8 +252,8 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let currentIndex3 = 0;
-    let myChart3 = null;
-    //let barChart3 = null;
+    let myPieChart = null;
+    let myBarChart = null;
 
     const contents3 = [
       {
@@ -261,7 +264,7 @@
           "L’alcol è associato a oltre 200 malattie, tra cui cirrosi epatica, alcuni tumori, patologie cardiovascolari e disturbi psichiatrici."
         ],
         showChart: false,
-        //showBarChart: false
+        showBarChart: true
       },
       {
         title: "Accesso ai servizi di cura",
@@ -270,7 +273,7 @@
           "I servizi alcologici sono spesso inglobati nei servizi per le dipendenze, con poche strutture specializzate."
         ],
         showChart: false,
-        //showBarChart: true
+        showBarChart: false
       },
       {
         title: "Costo totale annuale",
@@ -281,7 +284,7 @@
           "Mentre arrivano fino a 20 miliardi di € (perdita di produttività, invalidità, pensionamenti anticipati)"
         ],
         showChart: true,
-       // showBarChart: true
+        showBarChart: false
       }
     ];
 
@@ -301,11 +304,11 @@
         chartContainer3.style.display = "none";
       }
 
-      // Pie Chart
+      // Grafico a torta
       if (content.showChart) {
-        const ctx3 = document.getElementById('pieChart3').getContext('2d');
-        if (myChart3) myChart3.destroy();
-        myChart3 = new Chart(ctx3, {
+        const ctxPie = document.getElementById('pieChart3').getContext('2d');
+        if (myPieChart) myPieChart.destroy();
+        myPieChart = new Chart(ctxPie, {
           type: 'pie',
           data: {
             labels: ['Costi Diretti Sanitari', 'Costi Indiretti', 'Altro/Non specificato'],
@@ -323,9 +326,44 @@
           }
         });
       } else {
-        if (myChart3) {
-          myChart3.destroy();
-          myChart3 = null;
+        if (myPieChart) {
+          myPieChart.destroy();
+          myPieChart = null;
+        }
+      }
+
+      // Grafico a barre
+      if (content.showBarChart) {
+        const ctxBar = document.getElementById('barChart3').getContext('2d');
+        if (myBarChart) myBarChart.destroy();
+        myBarChart = new Chart(ctxBar, {
+          type: 'bar',
+          data: {
+            labels: ['Stati Uniti', 'Italia', 'Germania', 'Francia', 'Regno Unito'],
+            datasets: [{
+              label: 'Costi Diretti (miliardi €)',
+              data: [6, 6.5, 7, 5, 3],
+              backgroundColor: '#36A2EB'
+            }, {
+              label: 'Costi Indiretti (miliardi €)',
+              data: [20, 18, 21, 15, 12],
+              backgroundColor: '#FF6384'
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: 'top' }
+            },
+            scales: {
+              x: { beginAtZero: true }
+            }
+          }
+        });
+      } else {
+        if (myBarChart) {
+          myBarChart.destroy();
+          myBarChart = null;
         }
       }
     }
@@ -335,6 +373,7 @@
 
   });
 </script>
+
 
 
 
