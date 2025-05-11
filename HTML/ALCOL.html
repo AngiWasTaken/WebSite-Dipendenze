@@ -156,8 +156,8 @@ function nextContent() {
 <div class="container mt-5 mb-5">
   <div class="content-box row align-items-center flex-row-reverse">
     <div class="col-md-6 p-4">
-      <h2 id="title2">:::::: Inserire titolo</h2>
-      <p id="text2">.</p>
+      <h2 id="title2">Risci e Effetti </h2>
+      <p id="text2"></p>
       <button class="arrow-btn mt-3" onclick="nextContent2()">→</button>
     </div>
     <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container2" style="display: none;">
@@ -416,6 +416,7 @@ function nextContent() {
           },
           options: {
             responsive: true,
+             maintainAspectRatio: true, 
             plugins: {
               legend: { position: 'top' },
               title: {
