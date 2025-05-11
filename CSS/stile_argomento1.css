@@ -71,7 +71,7 @@ body, html {
 
 /* Titoli e paragrafi */
 h1 {
-  color: #c542f5;
+  color: #4487ea;
   font-size: 50px;
   font-weight: bold;
   text-align: left;
@@ -82,7 +82,7 @@ p, ul {
   color: white;
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
-  text-align: left;
+  text-align: center;
 }
 
 ul {
