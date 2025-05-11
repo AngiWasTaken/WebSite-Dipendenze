@@ -40,6 +40,8 @@
       <button class="arrow-btn mt-3" onclick="nextContent()">→</button>
     </div>
     <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container" style="display: none;">
+      <img id="alcolImg" src="../IMG/alcol1.jpg" alt="Alcol" class="alcol1" width="600" height="350" style="position: relative; top: 30px; left: 190px;">
+      <img id="alcol2" src="../IMG/alcol2.jpg" alt="Effetti dell'alcol" width="600" height="350" style="display: none; position: relative; top: 30px; left: 190px;">
       <div>
         <canvas id="myPieChart" width="400" height="400"></canvas>
       </div>
@@ -84,54 +86,65 @@
   ];
 
   function nextContent() {
-    currentIndex = (currentIndex + 1) % contents.length;
-    const content = contents[currentIndex];
+  currentIndex = (currentIndex + 1) % contents.length;
+  const content = contents[currentIndex];
 
-    document.getElementById('title').innerText = content.title;
-    document.getElementById('text').innerHTML = Array.isArray(content.text)
-      ? content.text.map(t => `<p>${t}</p>`).join('')
-      : `<p>${content.text}</p>`;
+  document.getElementById('title').innerText = content.title;
+  document.getElementById('text').innerHTML = Array.isArray(content.text)
+    ? content.text.map(t => `<p>${t}</p>`).join('')
+    : `<p>${content.text}</p>`;
 
-    const chartContainer = document.getElementById("chart-container");
+  const chartContainer = document.getElementById("chart-container");
+  const alcol1 = document.querySelector(".alcol1");
+  const alcol2 = document.getElementById("alcol2");
 
-    if (content.showChart) {
-      chartContainer.style.display = "flex";  // Mostra il contenitore del grafico
-
-      // Distruggi il grafico esistente se presente
-      if (myPieChart) {
-        myPieChart.destroy();
-      }
-
-      // Crea un nuovo grafico a torta solo se necessario
-      const ctx = document.getElementById('myPieChart').getContext('2d');
-      myPieChart = new Chart(ctx, {
-        type: 'pie',  // Tipo di grafico: a torta
-        data: {
-          labels: ['consumatori a rischio', ' dipendenza grave', ' consumatori moderati', 'non consumatori '],  // Etichette della torta
-          datasets: [{
-            data: [25, 10, 55, 10],  // Dati della torta
-            backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545'],  // Colori delle fette
-            borderWidth: 1
-          }]
-        },
-        options: {
-          plugins: {
-            legend: { position: 'bottom' },  // Posizione della legenda
-            title: {
-              display: true,
-              text: 'Tipologia di consumo problematico',  // Titolo del grafico
-              color: 'black'  // Colore del titolo
-            }
+  // Mostra/nasconde contenitore grafico
+  if (content.showChart) {
+    chartContainer.style.display = "flex";
+    if (myPieChart) myPieChart.destroy();
+    const ctx = document.getElementById('myPieChart').getContext('2d');
+    myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['consumatori a rischio', ' dipendenza grave', ' consumatori moderati', 'non consumatori '],
+        datasets: [{
+          data: [25, 10, 55, 10],
+          backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' },
+          title: {
+            display: true,
+            text: 'Tipologia di consumo problematico',
+            color: 'black'
           }
         }
-      });
-    } else {
-      chartContainer.style.display = "none";  // Nascondi il contenitore del grafico
-      if (myPieChart) {
-        myPieChart.destroy();  // Distruggi il grafico se non è necessario
       }
+    });
+  } else {
+    chartContainer.style.display = "none";
+    if (myPieChart) {
+      myPieChart.destroy();
     }
   }
+
+  // Gestione immagini per ogni slide
+  if (currentIndex === 0) {
+    alcol1.style.display = "block";
+    alcol2.style.display = "none";
+  } else if (currentIndex === 1) {
+    alcol1.style.display = "none";
+    alcol2.style.display = "block";
+    chartContainer.style.display = "flex"; // assicurati che il contenitore sia visibile
+  } else {
+    alcol1.style.display = "none";
+    alcol2.style.display = "none";
+  }
+}
+
 </script>
 
 
