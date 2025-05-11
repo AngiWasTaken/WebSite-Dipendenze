@@ -304,17 +304,18 @@ function nextContent() {
       <button class="arrow-btn mt-3" id="nextBtn3">→</button>
     </div>
     <div class="col-md-6 p-4 d-flex flex-column align-items-center">
-      <div style="width: 600px; position: relative; top: 10px; left: 100px;">
-        <img id="alcol8" src="../IMG/alcol8.jpg" alt="Alcol" style="width: 100%; height: auto;">
+      <div style="width: 600px;position: relative; top: 25px; left: 1px;">
+        <img id="alcol8" src="../IMG/alcol8.jpg" alt="Alcol" style="width: 600px; height: 350px;">
       </div>
       <!-- Questo contenitore viene mostrato solo dopo il clic -->
-      <div id="chart-container3" style="display: none; margin-top: 0; padding-top: 0;">
+      <div id="chart-container3" style="display: none; width: 600px; height:350px; margin-top: -100px; padding-top: 0;">
         <!-- Grafico a torta -->
         <canvas id="pieChart3" width="450" height="450"></canvas>
+
         <!-- Grafico a barre -->
          </div>
-      <div>
-        <canvas id="barChart3" width="1" height="1" style="margin-top: 0 !important;"></canvas>
+      <div id="chart-container4" style="display: none; margin-top: -100px; padding-top: 0; width: 600px;">
+        <canvas id="barChart3" style="position: relative; top: 1px;"></canvas>
       </div>
     </div>
   </div>
@@ -358,6 +359,7 @@ function nextContent() {
         "<ul>" + content.text.map(t => `<li>${t}</li>`).join('') + "</ul>";
 
       const chartContainer3 = document.getElementById("chart-container3");
+      
 
       if (content.showChart || content.showBarChart) {
         chartContainer3.style.display = "flex";
@@ -366,6 +368,10 @@ function nextContent() {
       }
 
       // Grafico a torta
+      
+
+
+
       if (content.showChart) {
         const ctxPie = document.getElementById('pieChart3').getContext('2d');
         if (myPieChart) myPieChart.destroy();
@@ -401,6 +407,13 @@ function nextContent() {
       }
 
       // Grafico a barre
+      const chartContainer4 = document.getElementById("chart-container4");
+
+      if (content.showBarChart) {
+        chartContainer4.style.display = "block";
+      } else {
+        chartContainer4.style.display = "none";
+      }
       if (content.showBarChart) {
         const ctxBar = document.getElementById('barChart3').getContext('2d');
         if (myBarChart) myBarChart.destroy();

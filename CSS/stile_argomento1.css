@@ -158,6 +158,10 @@ ul {
   margin-top: 0 !important; /* Rimuove i margini superiori */
   padding-top: 0 !important; /* Rimuove eventuali padding */
 }
+#chart-container4{
+  margin-top: 0 !important; /* Rimuove i margini superiori */
+  padding-top: 0 !important; /* Rimuove eventuali padding */
+}
 
 #barChart3 {
   margin-top: 0 !important; /* Rimuove i margini superiori */
