@@ -24,7 +24,7 @@
     <!-- Contenuto principale -->
     <div class="row flex-grow-1">
       <div class="col d-flex flex-column justify-content-center align-items-center text-center p-4">
-        <h1><strong>DISTURBO DA CANNABIS</strong></h1>
+        <h1><strong>DISTURBO DA CANNABIS<br><br></strong></h1>
         <p class="w-75">
           La cannabis è una sostanza che deriva dalla pianta omonima e da composti sintetici chimicamente simili, come l’hashish. È una delle sostanze illegali più diffuse al mondo e viene utilizzata sia in forma naturale che attraverso preparazioni sintetiche, alcune delle quali possono essere prescritte dal medico per specifiche condizioni.
         </p>
@@ -88,13 +88,47 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto">
-      <p>Testo footer.</p>
-    </footer>
+ <div class="impaginazione">
+          <nav aria-label="Navigazione tra le pagine">
+            <ul class="pagination justify-content-center">
+              <li class="page-item active">
+                <a class="page-link" href="../HTML/DIPENDENZA DA CAFFEINA.html">INTOSSICAZIONE DA CAFFEINA</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="../HTML/ALCOL.html">ALCOL</a></li>
+              <li class="page-item"><a class="page-link" href="../HTML/DISTURBO_DA_CANNABIS.html">DISTURBO DA CANNABIS</a></li>
+            </ul>
+          </nav>
+        </div>
 
+      </div>
+    </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="footer mt-auto">
+    <p>Testo footer.</p>
+  </footer>
+
+  <!-- Script Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+
+  <!-- Script gestione icone collapse -->
+  <script>
+    document.querySelectorAll('.collapse').forEach(collapse => {
+      const toggle = collapse.previousElementSibling.querySelector('.collapse-toggle');
+      const icon = toggle.querySelector('.icon');
+
+      collapse.addEventListener('show.bs.collapse', () => {
+        collapse.closest('.card-custom').classList.add('active');
+        icon.textContent = '▼';
+      });
+
+      collapse.addEventListener('hide.bs.collapse', () => {
+        collapse.closest('.card-custom').classList.remove('active');
+        icon.textContent = '➤';
+      });
+    });
+  </script>
+
+     </body>
 </html>
