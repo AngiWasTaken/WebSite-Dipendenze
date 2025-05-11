@@ -133,21 +133,22 @@
     }
   }
 </script>
-        <!-- Secondo menu a scorrimento - layout invertito -->
-        <div class="container mt-5 mb-5">
-          <div class="content-box row align-items-center flex-row-reverse">
-            <div class="col-md-6 p-4">
-              <h2 id="title2">:::::: Inserire titolo</h2>
-              <p id="text2">.</p>
-              <button class="arrow-btn mt-3" onclick="nextContent2()">→</button>
-            </div>
-            <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container2" style="display: none;">
-              <div>
-               <!-- <canvas id="pieChart2" width="250" height="250"></canvas>-->
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- Secondo menu a scorrimento - layout invertito -->
+<div class="container mt-5 mb-5">
+  <div class="content-box row align-items-center flex-row-reverse">
+    <div class="col-md-6 p-4">
+      <h2 id="title2">:::::: Inserire titolo</h2>
+      <p id="text2">.</p>
+      <button class="arrow-btn mt-3" onclick="nextContent2()">→</button>
+    </div>
+    <div class="col-md-6 p-4 d-flex justify-content-center" id="chart-container2" style="display: none;">
+      <div>
+       <canvas id="pieChart2" width="250" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   let currentIndex2 = 0;
   let pieChart2;
@@ -162,14 +163,14 @@
         "Sociali e ambientali: influenze sociali e culturali che normalizzano il consumo di alcol.",
         "Personali e comportamentali: tendenze impulsive e mancanza di controllo nel consumo."
       ],
-      showChart: true
+      showChart: false
     },
     {
       title: "Informazioni Rilevanti",
       text: [
         "Il disturbo da uso di alcol (AUD) comporta danni fisici, psicologici e sociali, con effetti su fegato, cuore, cervello e relazioni. I principali fattori di rischio includono genetica, stress, ambiente sociale e comportamenti impulsivi."
       ],
-      showChart: true
+      showChart: false
     },
     {
       title: "Patologie Associate",
@@ -179,7 +180,7 @@
         "Malattie epatiche: cirrosi epatica, epatite alcolica e steatosi epatica.",
         "Problemi neurologici: demenza, neuropatia alcolica e danni cognitivi."
       ],
-      showChart: true
+      showChart: false
     }
   ];
 
@@ -187,8 +188,12 @@
     currentIndex2 = (currentIndex2 + 1) % contents2.length;
     const content = contents2[currentIndex2];
 
- document.getElementById('text2').innerHTML =
-  content.text.map(t => `<p>${t}</p>`).join('');
+    // Aggiornamento del titolo
+    document.getElementById('title2').innerText = content.title;
+
+    // Aggiornamento del testo
+    document.getElementById('text2').innerHTML =
+      content.text.map(t => `<p>${t}</p>`).join('');
 
     const chartContainer2 = document.getElementById("chart-container2");
 
@@ -224,6 +229,7 @@
   }
 </script>
 
+
 <!-- Terzo menu a scorrimento -->
 <div class="container mt-5 mb-5">
   <div class="content-box row align-items-center">
@@ -235,8 +241,7 @@
       <button class="arrow-btn mt-3" id="nextBtn3">→</button>
     </div>
     <div class="col-md-6 p-4 d-flex flex-column align-items-center" id="chart-container3" style="display: none;">
-      <canvas id="pieChart3" width="250" height="250" class="mb-4"></canvas>
-      <canvas id="barChart3" width="300" height="200"></canvas>
+      <canvas id="pieChart3" width="80" height="80" class="mb-4"></canvas>
     </div>
   </div>
 </div>
@@ -323,49 +328,14 @@
           myChart3 = null;
         }
       }
-
-      /* Bar Chart
-      if (content.showBarChart) {
-        const barCtx3 = document.getElementById('barChart3').getContext('2d');
-        if (barChart3) barChart3.destroy();
-        barChart3 = new Chart(barCtx3, {
-          type: 'bar',
-          data: {
-            labels: ['Costi Sanitari', 'Perdita Produttività', 'Criminalità', 'Altro'],
-            datasets: [{
-              label: 'Milioni di Euro',
-              data: [6500, 18000, 2500, 1000],
-              backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545']
-            }]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: 'Distribuzione dei Costi Economici (stima)'
-              }
-            },
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      } else {
-        if (barChart3) {
-          barChart3.destroy();
-          barChart3 = null;
-        }
-      }
     }
 
     // Attacco evento al bottone
     document.getElementById("nextBtn3").addEventListener("click", nextContent3);
-  });*/
+
+  });
 </script>
+
 
 
  <div class="impaginazione">
