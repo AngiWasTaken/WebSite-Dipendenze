@@ -62,11 +62,18 @@ body, html {
 }
 
 .footer {
-  background-color: #2b2b3d;
-  color: #ccc;
-  text-align: center;
-  padding: 10px;
-  border-top: none;
+  background-color: #343a40; /* Colore di sfondo scuro */
+  color: white; /* Colore del testo */
+  padding: 20px 0; /* Spaziatura verticale */
+  font-size: 14px; /* Dimensione del testo */
+}
+
+.footer p {
+  margin: 0; /* Rimuove i margini verticali */
+}
+
+.footer small {
+  color: #6c757d; /* Colore grigio chiaro per il testo secondario */
 }
 
 /* Titoli e paragrafi */
