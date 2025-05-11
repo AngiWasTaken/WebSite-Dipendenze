@@ -26,7 +26,7 @@
     <div class="row flex-grow-1">
       <div class="col contenuto-principale d-flex flex-column justify-content-center align-items-center text-center p-4">
         
-        <h1><strong>Disturbo da Uso di Alcol<br></strong></h1>
+        <h1><strong>Disturbo da Uso di Alcol<br><br></strong></h1>
         <p class="w-75">
           Il disturbo da uso di alcol è una condizione cronica e spesso invalidante. È caratterizzato da un consumo incontrollato nonostante le conseguenze negative, con forti implicazioni per la salute pubblica.
         </p>
@@ -329,13 +329,46 @@ function nextContent3() {
 
 </script>
 
+ <div class="impaginazione">
+          <nav aria-label="Navigazione tra le pagine">
+            <ul class="pagination justify-content-center">
+              <li class="page-item active">
+                <a class="page-link" href="../HTML/DIPENDENZA DA CAFFEINA.html">INTOSSICAZIONE DA CAFFEINA</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="../HTML/ALCOL.html">ALCOL</a></li>
+              <li class="page-item"><a class="page-link" href="../HTML/DISTURBO_DA_CANNABIS.html">DISTURBO DA CANNABIS</a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="footer mt-auto text-center py-3 bg-light">
-    <p class="mb-0">© 2025 Disturbi da Dipendenza</p>
+  <footer class="footer mt-auto">
+    <p>Testo footer.</p>
   </footer>
 
   <!-- Script Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Script gestione icone collapse -->
+  <script>
+    document.querySelectorAll('.collapse').forEach(collapse => {
+      const toggle = collapse.previousElementSibling.querySelector('.collapse-toggle');
+      const icon = toggle.querySelector('.icon');
+
+      collapse.addEventListener('show.bs.collapse', () => {
+        collapse.closest('.card-custom').classList.add('active');
+        icon.textContent = '▼';
+      });
+
+      collapse.addEventListener('hide.bs.collapse', () => {
+        collapse.closest('.card-custom').classList.remove('active');
+        icon.textContent = '➤';
+      });
+    });
+  </script>
      </body>
 </html>
